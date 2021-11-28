@@ -1,0 +1,41 @@
+.mar {
+  margin-left: 200px;
+  font-size: 22px;
+  margin-right: 25px;
+}
+
+.navStyle {
+  background-color: #89b5af;
+}
+
+.conneButton {
+  font-size: 1.4em;
+  color: #0e0d0d;
+  margin: 5px;
+  border-radius: 5px;
+  background: #cf3a3a;
+  box-shadow: 2px 2px 4px #b3b3b3, -2px -2px 4px #0e0d0d;
+}
+
+.butHover:active {
+  color: #0e0d0d;
+  border-radius: 5px;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 2px 2px 4px #b3b3b3, -2px -2px 4px #0e0d0d;
+}
+.enrButton {
+  font-size: 1.4em;
+  color: #0e0d0d;
+  margin: 5px;
+  border-radius: 5px;
+  background: #4cd86a;
+  box-shadow: 2px 2px 4px #b3b3b3, -2px -2px 4px #0e0d0d;
+}
+
+.buttonEffet {
+  color: #0e0d0d;
+  margin: 5px;
+  border-radius: 5px;
+  background: #e0e0e0;
+  box-shadow: 2px 2px 4px #b3b3b3, -2px -2px 4px #0e0d0d;
+}
