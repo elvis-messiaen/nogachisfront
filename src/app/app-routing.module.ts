@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AccueilComponent } from './accueil/accueil.component';
-import { AppareilViewComponent } from './appareil-view/appareil-view.component';
-import { AuthComponent } from './auth/auth.component';
-import { ListeRecetteComponent } from './liste-recette/liste-recette.component';
+import { AccueilComponent } from './pages/accueil/accueil.component';
+import { AppareilViewComponent } from './pages/appareil-view/appareil-view.component';
+import { AuthComponent } from './core/auth/auth.component';
+import { ListeRecetteComponent } from './pages/liste-recette/liste-recette.component';
 
 
 const routes: Routes = [
