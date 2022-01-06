@@ -4,15 +4,15 @@ import { MatSliderModule } from '@angular/material/slider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { CardrecetteComponent } from './cardrecette/cardrecette.component';
-import { TestflexComponent } from './testflex/testflex.component';
-import { FooterComponent } from './footer/footer.component';
-import { ListeRecetteComponent } from './liste-recette/liste-recette.component';
-import { AuthComponent } from './auth/auth.component';
-import { AppareilViewComponent } from './appareil-view/appareil-view.component';
-import { SauvegardeComponent } from './sauvegarde/sauvegarde.component';
-import { AccueilComponent } from './accueil/accueil.component';
+import { NavBarComponent } from './features/nav-bar/nav-bar.component';
+import { CardrecetteComponent } from './pages/cardrecette/cardrecette.component';
+import { TestflexComponent } from './pages/testflex/testflex.component';
+import { FooterComponent } from './features/footer/footer.component';
+import { ListeRecetteComponent } from './pages/liste-recette/liste-recette.component';
+import { AuthComponent } from './core/auth/auth.component';
+import { AppareilViewComponent } from './pages/appareil-view/appareil-view.component';
+import { SauvegardeComponent } from './pages/sauvegarde/sauvegarde.component';
+import { AccueilComponent } from './pages/accueil/accueil.component';
 
 
 
