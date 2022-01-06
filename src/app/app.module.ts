@@ -13,6 +13,8 @@ import { AuthComponent } from './core/auth/auth.component';
 import { AppareilViewComponent } from './pages/appareil-view/appareil-view.component';
 import { SauvegardeComponent } from './pages/sauvegarde/sauvegarde.component';
 import { AccueilComponent } from './pages/accueil/accueil.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -34,6 +36,8 @@ import { AccueilComponent } from './pages/accueil/accueil.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
