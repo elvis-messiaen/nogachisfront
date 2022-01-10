@@ -22,6 +22,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
 import { BlogDetailsComponent } from './pages/article/preservations/blog-details/blog-details.component';
+import { CategoryComponent } from './cat/category/category.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { BlogDetailsComponent } from './pages/article/preservations/blog-details
     AllBlogsComponent,
     UpdateBlogComponent,
     BlogDetailsComponent
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,
