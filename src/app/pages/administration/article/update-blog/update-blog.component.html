@@ -1,0 +1,39 @@
+<div class="update-blog-container">
+  <div class="update-blog-main-form">
+    <div class="update-blog-input-title">
+      <mat-form-field>
+        <input matInput type="text" placeholder="Title of the blog">
+      </mat-form-field>
+    </div>
+    <div class="update-blog-input-content">
+
+    </div>
+  </div>
+  <div class="update-blog-additional-form">
+    <div class="update-blog-additional-feature-image">
+      <h3>Feature Image</h3>
+      <input #imageInput
+             type="file"
+             accept="image/*"
+             hidden>
+      <img class="feature-image">
+      <button mat-raised-button color="primary">
+        Change Image
+      </button>
+    </div>
+    <div class="update-blog-additional-tags">
+      <h3>Tags</h3>
+      <mat-chip-list class="chip-list">
+        <mat-chip></mat-chip>
+      </mat-chip-list>
+    </div>
+    <div class="update-blog-additional-actions">
+      <button mat-raised-button id="update-action">
+        Update
+      </button>
+    </div>
+  </div>
+</div>
+
+<mat-spinner class="progress-spinner" [diameter]="50"></mat-spinner>
+

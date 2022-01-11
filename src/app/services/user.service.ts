@@ -3,34 +3,32 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/user.model';
 
+const USER_API = 'http://localhost:8080/api/user/';
+
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-
-  private readonly userUrl: string;
-
-  constructor(private http: HttpClient) {
-    this.userUrl = 'http://localhost:8080/user';
-  }
+  constructor(private http: HttpClient) {}
 
   public getAll(): Observable<User[]> {
-    return this.http.get<User[]>(this.userUrl);
+    return this.http.get<User[]>(USER_API);
   }
 
   public getOne(id: number): Observable<User> {
-    return this.http.get<User>(`${this.userUrl}/${id}`);
+    return this.http.get<User>(`${USER_API} + ${id}`);
   }
 
   public create(user: User): Observable<User> {
-    return this.http.post<User>(this.userUrl, user);
+    return this.http.post<User>(USER_API, user);
   }
 
   public delete(id : number): Observable<User> {
-    return this.http.delete(`${this.userUrl}/${id}`);
+    return this.http.delete(`${USER_API} + ${id}`);
   }
 
   public update(user: User): Observable<User> {
-    return this.http.put<User>(this.userUrl, user);
+    return this.http.put<User>(USER_API, user);
   }
+
 }
