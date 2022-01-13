@@ -21,8 +21,10 @@ import { UpdateBlogComponent } from './pages/administration/article/update-blog/
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
-import { BlogDetailsComponent } from './pages/article/preservations/blog-details/blog-details.component';
+import { BlogDetailsComponent } from './pages/article/article-details/blog-details.component';
 import { CategoryComponent } from './cat/category/category.component';
+import { PreservationsComponent } from './pages/article/preservations/preservations.component';
+import { RecipesComponent } from './pages/article/recipes/recipes.component';
 
 
 @NgModule({
@@ -39,8 +41,11 @@ import { CategoryComponent } from './cat/category/category.component';
     AddBlogComponent,
     AllBlogsComponent,
     UpdateBlogComponent,
-    BlogDetailsComponent
+    BlogDetailsComponent,
     CategoryComponent,
+    PreservationsComponent,
+    RecipesComponent,
+  
   ],
   imports: [
     BrowserModule,
