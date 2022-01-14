@@ -7,18 +7,22 @@ import { LoginComponent } from './pages/account/login/login.component';
 import { RegisterComponent } from './pages/account/register/register.component';
 import { AllBlogsComponent } from './pages/administration/article/all-blogs/all-blogs.component';
 import { AddBlogComponent } from './pages/administration/article/add-blog/add-blog.component';
-import { BlogDetailsComponent } from './pages/article/preservations/blog-details/blog-details.component';
+import { BlogDetailsComponent } from './pages/article/article-details/blog-details.component';
 import { UpdateBlogComponent } from './pages/administration/article/update-blog/update-blog.component';
-
+import { PreservationsComponent } from './pages/article/preservations/preservations.component';
+import { RecipesComponent } from './pages/article/recipes/recipes.component';
 
 const routes: Routes = [
   { path: 'homepage', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'preservations', component: PreservationsComponent },
+  { path: 'recipe', component: RecipesComponent },
   { path: 'blog/:id', component: BlogDetailsComponent },
   {
-    path: 'admin', component: BoardAdminComponent,
+    path: 'admin',
+    component: BoardAdminComponent,
     children: [
       { path: 'all-blogs', component: AllBlogsComponent },
       { path: 'add-blog', component: AddBlogComponent },
@@ -28,10 +32,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'homepage', pathMatch: 'full' },
 ];
 
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}
