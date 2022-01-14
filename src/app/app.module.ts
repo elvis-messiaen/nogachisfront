@@ -23,6 +23,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
 import { ArticleComponent } from './article/article.component';
 import { PreservationsDetailsComponent } from './pages/article/preservations/preservations-details/preservations-details.component';
+import { CategoryComponent } from './cat/category/category.component';
+import { PreservationsComponent } from './pages/article/preservations/preservations.component';
+import { RecipesComponent } from './pages/article/recipes/recipes.component';
 
 
 @NgModule({
@@ -39,6 +42,10 @@ import { PreservationsDetailsComponent } from './pages/article/preservations/pre
     AddBlogComponent,
     AllBlogsComponent,
     UpdateBlogComponent,
+    CategoryComponent,
+    PreservationsComponent,
+    RecipesComponent,
+  
     PreservationsDetailsComponent,
     ArticleComponent,
   ],
