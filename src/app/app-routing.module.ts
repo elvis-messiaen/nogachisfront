@@ -7,8 +7,8 @@ import { LoginComponent } from './pages/account/login/login.component';
 import { RegisterComponent } from './pages/account/register/register.component';
 import { AllBlogsComponent } from './pages/administration/article/all-blogs/all-blogs.component';
 import { AddBlogComponent } from './pages/administration/article/add-blog/add-blog.component';
-import { BlogDetailsComponent } from './pages/article/preservations/blog-details/blog-details.component';
 import { UpdateBlogComponent } from './pages/administration/article/update-blog/update-blog.component';
+import { PreservationsDetailsComponent } from './pages/article/preservations/preservations-details/preservations-details.component';
 
 
 const routes: Routes = [
@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'blog/:id', component: BlogDetailsComponent },
+  { path: 'preservations/details', component: PreservationsDetailsComponent },
   {
     path: 'admin', component: BoardAdminComponent,
     children: [

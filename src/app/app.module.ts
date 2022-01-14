@@ -21,8 +21,8 @@ import { UpdateBlogComponent } from './pages/administration/article/update-blog/
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
-import { BlogDetailsComponent } from './pages/article/preservations/blog-details/blog-details.component';
 import { ArticleComponent } from './article/article.component';
+import { PreservationsDetailsComponent } from './pages/article/preservations/preservations-details/preservations-details.component';
 
 
 @NgModule({
@@ -39,7 +39,7 @@ import { ArticleComponent } from './article/article.component';
     AddBlogComponent,
     AllBlogsComponent,
     UpdateBlogComponent,
-    BlogDetailsComponent
+    PreservationsDetailsComponent,
     ArticleComponent,
   ],
   imports: [
