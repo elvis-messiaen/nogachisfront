@@ -16,7 +16,7 @@ export class UserService {
   }
 
   public getOne(id: number): Observable<User> {
-    return this.http.get<User>(`${USER_API} + ${id}`);
+    return this.http.get<User>(`${USER_API}/${id}`);
   }
 
   public create(user: User): Observable<User> {
@@ -24,7 +24,7 @@ export class UserService {
   }
 
   public delete(id : number): Observable<User> {
-    return this.http.delete(`${USER_API} + ${id}`);
+    return this.http.delete(`${USER_API}/${id}`);
   }
 
   public update(user: User): Observable<User> {
