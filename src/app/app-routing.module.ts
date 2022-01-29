@@ -7,29 +7,21 @@ import { LoginComponent } from './pages/account/login/login.component';
 import { RegisterComponent } from './pages/account/register/register.component';
 import { AllBlogsComponent } from './pages/administration/article/all-blogs/all-blogs.component';
 import { AddBlogComponent } from './pages/administration/article/add-blog/add-blog.component';
-<<<<<<< HEAD
-import { UpdateBlogComponent } from './pages/administration/article/update-blog/update-blog.component';
 import { PreservationsDetailsComponent } from './pages/article/preservations/preservations-details/preservations-details.component';
 
-=======
-import { BlogDetailsComponent } from './pages/article/article-details/blog-details.component';
-import { UpdateBlogComponent } from './pages/administration/article/update-blog/update-blog.component';
 import { PreservationsComponent } from './pages/article/preservations/preservations.component';
 import { RecipesComponent } from './pages/article/recipes/recipes.component';
->>>>>>> 8ffca259d442ed9312b1fd2be291410686ce8f75
+import { UpdateBlogComponent } from './pages/administration/article/update-blog/update-blog.component';
 
 const routes: Routes = [
   { path: 'homepage', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
-<<<<<<< HEAD
   { path: 'preservations/details', component: PreservationsDetailsComponent },
-=======
   { path: 'preservations', component: PreservationsComponent },
   { path: 'recipe', component: RecipesComponent },
-  { path: 'blog/:id', component: BlogDetailsComponent },
->>>>>>> 8ffca259d442ed9312b1fd2be291410686ce8f75
+
   {
     path: 'admin',
     component: BoardAdminComponent,

@@ -1,14 +1,22 @@
-.blog-details-container {
+/*.container {
+    background-color: background-color: #fefbf3;
+    ;
+}
+*/
+.preservations-details-container {
     width: 100%;
     max-width: 700px;
+    padding-top: 3em;
     margin: 0 auto;
     display: grid;
+    padding-bottom: 8em;
+    background-color: #fefbf3;
 }
 
 #title {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f7f7f7;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #f8f0df;
     padding: 0.8em;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -18,55 +26,26 @@
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
-.blog-details-image {
-    widtH: 100%;
+.preservations-details-image {
+    width: 100%;
     height: 100%;
     max-height: 400px;
 }
 
-.blog-details-image img {
+.preservations-details-image img {
     width: 100%;
     height: 100%;
 }
 
-.blog-details-title-date {
-    display: flex;
-    flex-direction: column;
-
-}
-
-.blog-details-title-date #title {
-    font-size: 2em;
-}
-
-.blog-details-title-date #date {
-    font-size: 1.2em;
-    font-weight: lighter;
-}
-
-.blog-details-content p {
-    font-size: 1.3em;
-}
-
 .card {
-    background-color: #f7f7f7;
+    background-color: #f8f0df;
     padding: 20px 25px 30px;
 
-    margin-top: 50px;
+    margin-top: 11em;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
     -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-}
-
-.profile-img-card {
-    width: 96px;
-    height: 96px;
-    margin: 0 auto 10px;
-    display: block;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
 }

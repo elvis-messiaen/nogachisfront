@@ -21,7 +21,6 @@ import { UpdateBlogComponent } from './pages/administration/article/update-blog/
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
-import { ArticleComponent } from './article/article.component';
 import { PreservationsDetailsComponent } from './pages/article/preservations/preservations-details/preservations-details.component';
 import { CategoryComponent } from './cat/category/category.component';
 import { PreservationsComponent } from './pages/article/preservations/preservations.component';
@@ -45,9 +44,7 @@ import { RecipesComponent } from './pages/article/recipes/recipes.component';
     CategoryComponent,
     PreservationsComponent,
     RecipesComponent,
-  
     PreservationsDetailsComponent,
-    ArticleComponent,
   ],
   imports: [
     BrowserModule,
