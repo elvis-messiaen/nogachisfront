@@ -2,17 +2,25 @@
   <div class="search">
     <input
       class="mb-50 buttonEffet"
-      type="search"
+      type="text"
       placeholder="Rechercher"
       aria-label="Search"
+      [(ngModel)]="search"
     />
     <button class="ml-10 buttonEffet" type="button">Search</button>
-
     <button class="droite buttonEffet" type="button">Froid</button>
     <button class="buttonEffet" type="button">Chaud</button>
     <button class="buttonEffet" type="button">Autres</button>
   </div>
-
+  <!--
+  <div>
+    <ul *ngIf="search">
+      <li *ngFor="let article of articles | filter: search">
+        {{ article.title }}
+      </li>
+    </ul>
+  </div>
+-->
   <div>
     <div class="contourCarddes mb-20">
       <h2 class="titre centerTexte">
@@ -21,8 +29,7 @@
       Parmi les solutions anti-gaspillage alimentaire, la première se trouve
       dans l’organisation des courses. Pour éviter de gaspiller, il y a quelques
       tips simples à adopter que vous pourrez appliquer dès demain.
-      <br>
-      
+      <br />
     </div>
   </div>
   <div class="column">
@@ -48,16 +55,19 @@
       </div>
     </div>
   </div>
-
+  <!--
+  <div class="col-sm-4">
+    <app-card></app-card>
+  </div>
+</div>
+-->
   <div>
-    <div class="col-sm-4">
-      <app-card></app-card>
-    </div>
-    <div class="col-sm-4">
-      <app-card></app-card>
-    </div>
-    <div class="col-sm-4">
-      <app-card></app-card>
+    <div *ngIf="search">
+      <div *ngFor="let article of articles | filter: search">
+        <div class="col-sm-4">
+          <app-card></app-card>
+        </div>
+      </div>
     </div>
   </div>
 </div>
