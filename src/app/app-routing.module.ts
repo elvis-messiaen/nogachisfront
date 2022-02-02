@@ -12,6 +12,7 @@ import { PreservationsDetailsComponent } from './pages/article/preservations/pre
 import { PreservationsComponent } from './pages/article/preservations/preservations.component';
 import { RecipesComponent } from './pages/article/recipes/recipes.component';
 import { UpdateBlogComponent } from './pages/administration/article/update-blog/update-blog.component';
+import { RecipeDetailsComponent } from './pages/article/recipes/recipe-details/recipe-details.component';
 
 const routes: Routes = [
   { path: 'homepage', component: HomepageComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'preservations/details', component: PreservationsDetailsComponent },
   { path: 'preservations', component: PreservationsComponent },
   { path: 'recipe', component: RecipesComponent },
+  { path: 'recipe/details', component: RecipeDetailsComponent },
 
   {
     path: 'admin',
@@ -38,4 +40,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -25,6 +25,7 @@ import { PreservationsDetailsComponent } from './pages/article/preservations/pre
 import { CategoryComponent } from './cat/category/category.component';
 import { PreservationsComponent } from './pages/article/preservations/preservations.component';
 import { RecipesComponent } from './pages/article/recipes/recipes.component';
+import { RecipeDetailsComponent } from './pages/article/recipes/recipe-details/recipe-details.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { RecipesComponent } from './pages/article/recipes/recipes.component';
     PreservationsComponent,
     RecipesComponent,
     PreservationsDetailsComponent,
+    RecipeDetailsComponent,
   ],
   imports: [
     BrowserModule,
