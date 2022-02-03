@@ -1,3 +1,4 @@
+import { FormulaireadminpostComponent } from './formulaireadminpost/formulaireadminpost.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './pages/homepage/homepage.component';
@@ -22,6 +23,8 @@ const routes: Routes = [
   { path: 'preservations/details', component: PreservationsDetailsComponent },
   { path: 'preservations', component: PreservationsComponent },
   { path: 'recipe', component: RecipesComponent },
+  { path: 'blog/:id', component: BlogDetailsComponent },
+  { path: 'articlepost', component: FormulaireadminpostComponent },
   { path: 'recipe/details', component: RecipeDetailsComponent },
 
   {

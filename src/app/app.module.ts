@@ -9,7 +9,7 @@ import { CardComponent } from './features/card/card.component';
 import { FooterComponent } from './features/footer/footer.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/account/login/login.component';
 import { BoardAdminComponent } from './pages/administration/board-admin/board-admin.component';
 import { ProfileComponent } from './pages/account/profile/profile.component';
@@ -27,6 +27,7 @@ import { PreservationsComponent } from './pages/article/preservations/preservati
 import { RecipesComponent } from './pages/article/recipes/recipes.component';
 import { RecipeDetailsComponent } from './pages/article/recipes/recipe-details/recipe-details.component';
 import { FilterPipe } from './pages/article/preservations/filter.pipe';
+import { FormulaireadminpostComponent } from './formulaireadminpost/formulaireadminpost.component';
 
 
 
@@ -50,6 +51,7 @@ import { FilterPipe } from './pages/article/preservations/filter.pipe';
     PreservationsDetailsComponent,
     RecipeDetailsComponent,
     FilterPipe,
+    FormulaireadminpostComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,10 +63,10 @@ import { FilterPipe } from './pages/article/preservations/filter.pipe';
     MatFormFieldModule,
     MatProgressSpinnerModule,
     MatChipsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}

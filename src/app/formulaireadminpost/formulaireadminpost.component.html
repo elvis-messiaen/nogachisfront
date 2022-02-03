@@ -1,0 +1,83 @@
+<div class="container">
+  <form class="contour" (ngSubmit)="submit()" [formGroup]="form">
+    <div class="mt-50 ml-30">
+      <label class="mr-20 min">Titre</label>
+      <input formControlName="title" type="text" />
+      <div
+        class="error"
+        *ngIf="form.get('title')?.errors && form.get('title')?.touched"
+      >
+        Le champs est requis
+      </div>
+    </div>
+
+    <div class="mt-50 ml-30" >
+      <label class="mr-20 mt-20 min">Type de card</label>
+      <form [formGroup]="form">
+        <select formControlName="fr">
+          <option class="entete" value="Froid" disabled>Froid</option>
+          <option *ngFor="let fr of froid" [ngValue]="fr">
+            {{ fr.names }}
+          </option>
+          <option class="entete" value="Chaud" disabled>Chaud</option>
+          <option *ngFor="let ch of chaud" [ngValue]="ch">
+            {{ ch.names }}
+          </option>
+        </select>
+      </form>
+      <div
+        class="error"
+        *ngIf="form.get('fr')?.errors && form.get('fr')?.touched"
+      >
+        Le champs est requis
+      </div>
+    </div>
+
+
+    <div class="mt-50 ml-30">
+      <label class="mr-20 min">Description</label>
+      <input formControlName="description" type="text" />
+      <div
+        class="error"
+        *ngIf="
+          form.get('description')?.errors && form.get('description')?.touched
+        "
+      >
+        La taille de texte est de 50 caractére minimum !
+      </div>
+    </div>
+
+    <div formArrayName="liens">
+      <div class="mt-50 ml-30">
+        <button type="button" (click)="addPhoto()" class="styleButtonGreen">
+          Ajouter liens pour photo
+        </button>
+      </div>
+      <div
+        class="flex-column"
+        [formControlName]="index"
+        *ngFor="let photo of liens.controls; let index = index"
+      >
+        <label class="mt-20 ml-30 row wid" for="liens">photo</label>
+
+        <input class="mt-10 ml-30 row wid" type="text" />
+        <div class="ml-30">
+          <button
+            type="button"
+            (click)="remove(index)"
+            class="row styleButtonRed"
+          >
+            delete
+          </button>
+        </div>
+      </div>
+
+      <button
+        class="styleButtonRed marginsp"
+        style="margin-top: 20px; margin-bottom: 200px"
+      >
+        Valider
+      </button>
+    </div>
+  </form>
+</div>
