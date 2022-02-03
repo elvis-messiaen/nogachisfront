@@ -21,10 +21,11 @@ import { UpdateBlogComponent } from './pages/administration/article/update-blog/
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
-import { BlogDetailsComponent } from './pages/article/article-details/blog-details.component';
+import { PreservationsDetailsComponent } from './pages/article/preservations/preservations-details/preservations-details.component';
 import { CategoryComponent } from './cat/category/category.component';
 import { PreservationsComponent } from './pages/article/preservations/preservations.component';
 import { RecipesComponent } from './pages/article/recipes/recipes.component';
+import { RecipeDetailsComponent } from './pages/article/recipes/recipe-details/recipe-details.component';
 
 
 @NgModule({
@@ -41,11 +42,11 @@ import { RecipesComponent } from './pages/article/recipes/recipes.component';
     AddBlogComponent,
     AllBlogsComponent,
     UpdateBlogComponent,
-    BlogDetailsComponent,
     CategoryComponent,
     PreservationsComponent,
     RecipesComponent,
-  
+    PreservationsDetailsComponent,
+    RecipeDetailsComponent,
   ],
   imports: [
     BrowserModule,

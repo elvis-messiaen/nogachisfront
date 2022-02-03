@@ -10,10 +10,10 @@
 
 .conneButton {
   font-size: 1.4em;
-  color: #0e0d0d;
+  color: white;
   margin: 5px;
   border-radius: 5px;
-  background: #cf3a3a;
+  background: #559763;
   box-shadow: 2px 2px 4px #b3b3b3, -2px -2px 4px #0e0d0d;
 }
 
@@ -23,12 +23,13 @@
   background: linear-gradient(145deg, #e6e6e6, #ffffff);
   box-shadow: 2px 2px 4px #b3b3b3, -2px -2px 4px #0e0d0d;
 }
+
 .enrButton {
   font-size: 1.4em;
-  color: #0e0d0d;
+  color: white;
   margin: 5px;
   border-radius: 5px;
-  background: #4cd86a;
+  background: #cf3a3a;
   box-shadow: 2px 2px 4px #b3b3b3, -2px -2px 4px #0e0d0d;
 }
 
@@ -39,7 +40,8 @@
   background: #e0e0e0;
   box-shadow: 2px 2px 4px #b3b3b3, -2px -2px 4px #0e0d0d;
 }
-.active{
+
+.active {
   color: white;
   background-color: #070000;
 }

@@ -7,19 +7,23 @@ import { LoginComponent } from './pages/account/login/login.component';
 import { RegisterComponent } from './pages/account/register/register.component';
 import { AllBlogsComponent } from './pages/administration/article/all-blogs/all-blogs.component';
 import { AddBlogComponent } from './pages/administration/article/add-blog/add-blog.component';
-import { BlogDetailsComponent } from './pages/article/article-details/blog-details.component';
-import { UpdateBlogComponent } from './pages/administration/article/update-blog/update-blog.component';
+import { PreservationsDetailsComponent } from './pages/article/preservations/preservations-details/preservations-details.component';
+
 import { PreservationsComponent } from './pages/article/preservations/preservations.component';
 import { RecipesComponent } from './pages/article/recipes/recipes.component';
+import { UpdateBlogComponent } from './pages/administration/article/update-blog/update-blog.component';
+import { RecipeDetailsComponent } from './pages/article/recipes/recipe-details/recipe-details.component';
 
 const routes: Routes = [
   { path: 'homepage', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'preservations/details', component: PreservationsDetailsComponent },
   { path: 'preservations', component: PreservationsComponent },
   { path: 'recipe', component: RecipesComponent },
-  { path: 'blog/:id', component: BlogDetailsComponent },
+  { path: 'recipe/details', component: RecipeDetailsComponent },
+
   {
     path: 'admin',
     component: BoardAdminComponent,
@@ -36,4 +40,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
