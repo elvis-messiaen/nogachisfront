@@ -26,6 +26,8 @@ import { CategoryComponent } from './cat/category/category.component';
 import { PreservationsComponent } from './pages/article/preservations/preservations.component';
 import { RecipesComponent } from './pages/article/recipes/recipes.component';
 import { RecipeDetailsComponent } from './pages/article/recipes/recipe-details/recipe-details.component';
+import { FilterPipe } from './pages/article/preservations/filter.pipe';
+
 
 
 @NgModule({
@@ -47,6 +49,7 @@ import { RecipeDetailsComponent } from './pages/article/recipes/recipe-details/r
     RecipesComponent,
     PreservationsDetailsComponent,
     RecipeDetailsComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,7 @@ import { RecipeDetailsComponent } from './pages/article/recipes/recipe-details/r
     MatFormFieldModule,
     MatProgressSpinnerModule,
     MatChipsModule,
+    FormsModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
