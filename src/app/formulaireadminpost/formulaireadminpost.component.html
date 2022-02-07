@@ -43,6 +43,22 @@
         Le champs est requis
       </div>
     </div>
+
+
+        <div class="mt-50 ml-30">
+      <label class="mr-20 min">Catégorie</label>
+      <input formControlName="nameCategory" type="text" />
+      <div
+        class="error"
+        *ngIf="form.get('nameCategory')?.errors && form.get('nameCategory')?.touched"
+      >
+        La taille de texte est de 50 caractére minimum !
+      </div>
+    </div>
+
+
+
+
     <div class="mt-50 ml-30">
       <label class="mr-20 min">Description</label>
       <input formControlName="content" type="text" />

@@ -1,10 +1,11 @@
+import { CategoryService } from './../services/category.service';
+import { Category } from './../models/category.model';
 import { Photo } from './../models/photo.model';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { Article } from '../models/article.model';
 import { ArticleService } from '../services/article.service';
-import { PhotoService } from '../services/photo.service';
 
 @Component({
   selector: 'app-formulaireadminpost',
@@ -35,7 +36,8 @@ export class FormulaireadminpostComponent implements OnInit {
   public photos: Photo[] = [];
   public selectArticle?: Article;
   public photo?: string;
-  public namephoto: any = '';
+  public namephoto: string = '';
+  public nameCategory!: Category;
 
   public form: FormGroup = new FormGroup({
     name: new FormControl(this.froid[1], Validators.required),
@@ -46,19 +48,20 @@ export class FormulaireadminpostComponent implements OnInit {
       Validators.minLength(50),
     ]),
     namephoto: new FormControl(),
+    nameCategory: new FormControl('', [Validators.required]),
   });
 
   constructor(
     private articleService: ArticleService,
-    private photoservices: PhotoService,
-    private http: HttpClient
+    private http: HttpClient,
+    private categoryService: CategoryService
   ) {}
   ngOnInit(): void {}
 
   public submit() {
+    
     this.articleService.create(this.form.value).subscribe();
-    console.log(this.namephoto);
-
+    this.categoryService.create(this.form.value).subscribe();
     this.selectFiles;
     this.form.reset();
   }

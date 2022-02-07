@@ -9,28 +9,26 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class CategoryService {
+  [x: string]: any;
   constructor(private http: HttpClient) {}
 
   public getall(): Observable<Category[]> {
-    return this.http.get<Category[]>(`${environment.URL}/article`);
+    return this.http.get<Category[]>(`${environment.URL}/category`);
   }
 
   public getOne(id: number): Observable<Category> {
-    return this.http.get<Category>(`${environment.URL}/article/${id}`);
+    return this.http.get<Category>(`${environment.URL}/category/${id}`);
   }
 
-  public create(article: Category): Observable<Category> {
-    return this.http.post<Category>(
-      `${environment.URL}/article`,
-      article
-    );
+  public create(category: Category): Observable<Category> {
+    return this.http.post<Category>(`${environment.URL}/category`, category);
   }
 
   public delete(id: number): Observable<Category> {
-    return this.http.delete(`${environment.URL}/article/${id}`);
+    return this.http.delete(`${environment.URL}/category/${id}`);
   }
 
-  public update(article: Category): Observable<Category> {
-    return this.http.put<Category>(environment.URL, article);
+  public update(category: Category): Observable<Category> {
+    return this.http.put<Category>(environment.URL, category);
   }
 }
