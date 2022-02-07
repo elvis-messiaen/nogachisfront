@@ -12,22 +12,25 @@ export class CategoryService {
   constructor(private http: HttpClient) {}
 
   public getall(): Observable<Category[]> {
-    return this.http.get<Category[]>(`${environment.URL}/category`);
+    return this.http.get<Category[]>(`${environment.URL}/article`);
   }
 
   public getOne(id: number): Observable<Category> {
-    return this.http.get<Category>(`${environment.URL}/category/${id}`);
+    return this.http.get<Category>(`${environment.URL}/article/${id}`);
   }
 
-  public create(category: Category): Observable<Category> {
-    return this.http.post<Category>(environment.URL, category);
+  public create(article: Category): Observable<Category> {
+    return this.http.post<Category>(
+      `${environment.URL}/article`,
+      article
+    );
   }
 
   public delete(id: number): Observable<Category> {
-    return this.http.delete(`${environment.URL}/category/${id}`);
+    return this.http.delete(`${environment.URL}/article/${id}`);
   }
 
-  public update(category: Category): Observable<Category> {
-    return this.http.put<Category>(environment.URL, category);
+  public update(article: Category): Observable<Category> {
+    return this.http.put<Category>(environment.URL, article);
   }
 }

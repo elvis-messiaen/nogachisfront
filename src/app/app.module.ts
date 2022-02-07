@@ -52,6 +52,7 @@ import { FormulaireadminpostComponent } from './formulaireadminpost/formulairead
     RecipeDetailsComponent,
     FilterPipe,
     FormulaireadminpostComponent,
+    
   ],
   imports: [
     BrowserModule,

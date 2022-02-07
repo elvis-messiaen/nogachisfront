@@ -23,9 +23,9 @@ const routes: Routes = [
   { path: 'preservations/details', component: PreservationsDetailsComponent },
   { path: 'preservations', component: PreservationsComponent },
   { path: 'recipe', component: RecipesComponent },
-  { path: 'blog/:id', component: BlogDetailsComponent },
   { path: 'articlepost', component: FormulaireadminpostComponent },
   { path: 'recipe/details', component: RecipeDetailsComponent },
+  { path: 'formupost', component: FormulaireadminpostComponent },
 
   {
     path: 'admin',
@@ -34,6 +34,7 @@ const routes: Routes = [
       { path: 'all-blogs', component: AllBlogsComponent },
       { path: 'add-blog', component: AddBlogComponent },
       { path: 'update-blog/:id', component: UpdateBlogComponent },
+      { path: 'formupost', component: FormulaireadminpostComponent },
     ],
   },
   { path: '', redirectTo: 'homepage', pathMatch: 'full' },

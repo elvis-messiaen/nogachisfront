@@ -11,11 +11,22 @@
       </div>
     </div>
 
-    <div class="mt-50 ml-30" >
+    <div class="mt-50 ml-30">
+      <label class="mr-20 min">Date</label>
+      <input formControlName="date" type="date" />
+      <div
+        class="error"
+        *ngIf="form.get('date')?.errors && form.get('date')?.touched"
+      >
+        La date est requise
+      </div>
+    </div>
+
+    <div class="mt-50 ml-30">
       <label class="mr-20 mt-20 min">Type de card</label>
       <form [formGroup]="form">
-        <select formControlName="fr">
-          <option class="entete" value="Froid" disabled>Froid</option>
+        <select formControlName="name">
+          <option class="entete" value="froid" disabled>Froid</option>
           <option *ngFor="let fr of froid" [ngValue]="fr">
             {{ fr.names }}
           </option>
@@ -27,57 +38,37 @@
       </form>
       <div
         class="error"
-        *ngIf="form.get('fr')?.errors && form.get('fr')?.touched"
+        *ngIf="form.get('name')?.errors && form.get('name')?.touched"
       >
         Le champs est requis
       </div>
     </div>
-
-
     <div class="mt-50 ml-30">
       <label class="mr-20 min">Description</label>
-      <input formControlName="description" type="text" />
+      <input formControlName="content" type="text" />
       <div
         class="error"
-        *ngIf="
-          form.get('description')?.errors && form.get('description')?.touched
-        "
+        *ngIf="form.get('content')?.errors && form.get('content')?.touched"
       >
         La taille de texte est de 50 caractére minimum !
       </div>
     </div>
 
-    <div formArrayName="liens">
-      <div class="mt-50 ml-30">
-        <button type="button" (click)="addPhoto()" class="styleButtonGreen">
-          Ajouter liens pour photo
-        </button>
-      </div>
-      <div
-        class="flex-column"
-        [formControlName]="index"
-        *ngFor="let photo of liens.controls; let index = index"
-      >
-        <label class="mt-20 ml-30 row wid" for="liens">photo</label>
-
-        <input class="mt-10 ml-30 row wid" type="text" />
-        <div class="ml-30">
-          <button
-            type="button"
-            (click)="remove(index)"
-            class="row styleButtonRed"
-          >
-            delete
-          </button>
-        </div>
-      </div>
-
-      <button
-        class="styleButtonRed marginsp"
-        style="margin-top: 20px; margin-bottom: 200px"
-      >
-        Valider
-      </button>
+    <div  class="mt-50 ml-30" formArrayName="namephoto">
+      <label class="mr-20 wid" for="namephoto">photo</label>
+      <input type="file" multiple (change)="selectFiles($event)" />
     </div>
+
+    <img
+      *ngIf="form.controls.namephoto.value"
+      [src]="form.controls.namephoto.value"
+    />
+
+    <button
+      class="styleButtonRed marginsp"
+      style="margin-top: 20px; margin-bottom: 200px"
+    >
+      Valider
+    </button>
   </form>
 </div>

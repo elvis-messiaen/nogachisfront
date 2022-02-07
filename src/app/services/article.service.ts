@@ -12,26 +12,26 @@ export class ArticleService {
   private readonly articleUrl: string;
 
   constructor(private http: HttpClient) {
-    this.articleUrl = 'http://localhost:8080/article';
+    this.articleUrl = 'http://localhost:8080';
   }
 
   public getall(): Observable<Article[]> {
-    return this.http.get<Article[]>(this.articleUrl);
+    return this.http.get<Article[]>(`${this.articleUrl}/article`);
   }
 
   public getOne(id: number): Observable<Article> {
-    return this.http.get<Article>(`${this.articleUrl}/${id}`);
+    return this.http.get<Article>(`${this.articleUrl}/article${id}`);
   }
 
-  public create(category: Article): Observable<Article> {
-    return this.http.post<Article>(this.articleUrl, category);
+  public create(article: Article): Observable<Article> {
+    return this.http.post<Article>(`${this.articleUrl}/article`, article);
   }
 
-  public delete(id: number): Observable<Article> {
-    return this.http.delete(`${this.articleUrl}/${id}`);
+  public delete(id: number | string): Observable<Article> {
+    return this.http.delete<Article>(`${this.articleUrl}/article/${id}`);
   }
 
-  public update(user: Article): Observable<Article> {
-    return this.http.put<Article>(this.articleUrl, user);
+  public update(article: Article): Observable<Article> {
+    return this.http.put<Article>(this.articleUrl, article);
   }
 }

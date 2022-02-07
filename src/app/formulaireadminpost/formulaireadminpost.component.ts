@@ -1,8 +1,10 @@
+import { Photo } from './../models/photo.model';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { Article } from '../models/article.model';
-import { CategoryService } from '../services/category.service';
+import { ArticleService } from '../services/article.service';
+import { PhotoService } from '../services/photo.service';
 
 @Component({
   selector: 'app-formulaireadminpost',
@@ -12,7 +14,7 @@ import { CategoryService } from '../services/category.service';
 export class FormulaireadminpostComponent implements OnInit {
   froid = [
     { names: 'REFRIGERATTION' },
-    { names: 'SUGELATION' },
+    { names: 'SURGELATION' },
     { names: 'CONGELATION' },
   ];
   chaud = [
@@ -29,43 +31,49 @@ export class FormulaireadminpostComponent implements OnInit {
     { names: 'CONFISAGE' },
   ];
 
-  public categories: Article[] = [];
-  public selectedCategory?: Article;
+  public articles: Article[] = [];
+  public photos: Photo[] = [];
+  public selectArticle?: Article;
+  public photo?: string;
+  public namephoto: any = '';
+
   public form: FormGroup = new FormGroup({
-    fr: new FormControl(this.froid[3], Validators.required),
+    name: new FormControl(this.froid[1], Validators.required),
     title: new FormControl('', [Validators.required, Validators.minLength(2)]),
-    typescard: new FormControl('', Validators.required),
-    description: new FormControl('', [
+    date: new FormControl('', [Validators.required]),
+    content: new FormControl('', [
       Validators.required,
       Validators.minLength(50),
     ]),
-    liens: new FormArray([]),
+    namephoto: new FormControl(),
   });
 
-  public get liens() {
-    return this.form.get('liens') as FormArray;
-  }
-
-  public addPhoto() {
-    this.liens.push(new FormControl(''));
-  }
-
-  public remove(index: number) {
-    this.liens.removeAt(index);
-  }
-
-  public cardinfos() {}
-
   constructor(
-    private categoryService: CategoryService,
+    private articleService: ArticleService,
+    private photoservices: PhotoService,
     private http: HttpClient
   ) {}
-
   ngOnInit(): void {}
 
   public submit() {
-    this.categoryService.create(this.form.value).subscribe();
+    this.articleService.create(this.form.value).subscribe();
+    console.log(this.namephoto);
+
+    this.selectFiles;
     this.form.reset();
-    console.log(this.http);
   }
+
+  public selectFiles(event: any): void {
+    const formData = new FormData();
+    for (const file of event.target.files) {
+      formData.append('file', file);
+    }
+    this.http
+      .post<UploadResponse>('http://localhost:8080/photo', formData)
+      .subscribe((res) => this.form.controls.namephoto.patchValue(res.url));
+  }
+}
+
+export interface UploadResponse {
+  url: string;
 }
