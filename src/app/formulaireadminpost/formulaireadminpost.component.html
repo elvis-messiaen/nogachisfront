@@ -47,15 +47,15 @@
 
         <div class="mt-50 ml-30">
       <label class="mr-20 min">Catégorie</label>
-      <input formControlName="nameCategory" type="text" />
+      <input formControlName="namecategory" type="text" (change)="recuper($event)" />
       <div
         class="error"
-        *ngIf="form.get('nameCategory')?.errors && form.get('nameCategory')?.touched"
+        *ngIf="form.get('namecategory')?.errors && form.get('namecategory')?.touched"
       >
         La taille de texte est de 50 caractére minimum !
       </div>
     </div>
-
+  
 
 
 
@@ -87,4 +87,5 @@
       Valider
     </button>
   </form>
+
 </div>

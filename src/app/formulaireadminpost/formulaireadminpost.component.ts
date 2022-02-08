@@ -37,7 +37,6 @@ export class FormulaireadminpostComponent implements OnInit {
   public selectArticle?: Article;
   public photo?: string;
   public namephoto: string = '';
-  public nameCategory!: Category;
 
   public form: FormGroup = new FormGroup({
     name: new FormControl(this.froid[1], Validators.required),
@@ -48,20 +47,39 @@ export class FormulaireadminpostComponent implements OnInit {
       Validators.minLength(50),
     ]),
     namephoto: new FormControl(),
-    nameCategory: new FormControl('', [Validators.required]),
+    namecategory: new FormControl('', [Validators.required]),
   });
+
+  /*
+  public formCategory: FormGroup = new FormGroup({
+    namecategory: new FormControl('', [Validators.required]),
+  });
+*/
 
   constructor(
     private articleService: ArticleService,
     private http: HttpClient,
     private categoryService: CategoryService
   ) {}
+
   ngOnInit(): void {}
+/*
+  public submitCategory() {
+    this.categoryService.create(this.formCategory.value).subscribe();
+    this.formCategory.reset();
+    console.log(this.formCategory.value);
+    
+  }
+*/
+  public namecat!: string;
+  public recuper(e: any) {
+    this.namecat = e.target.value;
+    console.log(this.namecat);    
+  }
 
   public submit() {
-    
     this.articleService.create(this.form.value).subscribe();
-    this.categoryService.create(this.form.value).subscribe();
+   // this.categoryService.create(this.namecat).subscribe();
     this.selectFiles;
     this.form.reset();
   }
@@ -76,6 +94,8 @@ export class FormulaireadminpostComponent implements OnInit {
       .subscribe((res) => this.form.controls.namephoto.patchValue(res.url));
   }
 }
+
+
 
 export interface UploadResponse {
   url: string;
