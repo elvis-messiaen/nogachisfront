@@ -16,8 +16,7 @@ export class CardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.http
-      .get<Article[]>('http://localhost:8080/article')
+      this.articleService.getall()
       .subscribe((data: Article[]) => {
         this.articles = data;
       });

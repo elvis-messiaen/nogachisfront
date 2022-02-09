@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
-
+@import "~@ng-select/ng-select/themes/default.theme.css";  
 html,
 body {
   height: 100vh;
@@ -104,6 +104,94 @@ body {
   padding-right: 50px;
 }
 
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+.mt-100 {
+  margin-top: 100px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-50 {
+  margin-bottom: 50px;
+}
+.mb-200 {
+  margin-bottom: 200px;
+}
+.ml-10 {
+  margin-left: 10px;
+}
+.ml-20 {
+  margin-left: 20px;
+}
+.ml-30p {
+  margin-left: 30px;
+}
+.ml-40 {
+  margin-left: 40px;
+}
+.ml-50 {
+  margin-left: 50px;
+}
+.ml-100 {
+  margin-left: 100px;
+}
+.ml-33 {
+  margin-left: 33%;
+}
+.ml-30 {
+  margin-left: 30%;
+}
+
+.ml-50 {
+  margin-left: 50%;
+}
+.mr-20 {
+  margin-right: 20px;
+}
+.mr-50 {
+  margin-right: 50px;
+}
+.mg-20 {
+  margin: 20px;
+}
+.mg-50 {
+  margin: 50px;
+}
+
+.pt-20 {
+  padding-top: 20px;
+}
+.pt-50 {
+  padding-top: 20px;
+}
+.pb-20 {
+  padding-bottom: 20px;
+}
+.pb-50 {
+  padding-bottom: 50px;
+}
+.pb-200 {
+  padding-bottom: 200px;
+}
+.pl-20 {
+  padding-left: 20px;
+}
+.pl-20 {
+  padding-left: 50px;
+}
+.pr-20 {
+  padding-right: 20px;
+}
+.pr-20 {
+  padding-right: 50px;
+}
+
 .contourCard {
   border-radius: 5px;
   background: #e0e0e0;
@@ -123,4 +211,25 @@ body {
   padding-top: 2vw;
   padding: 2vw;
   width: 40vh;
+}
+.styleButtonRed {
+  text-decoration: none;
+  padding: 8px;
+  font-size: 1.4em;
+  color: white;
+  margin: 5px;
+  border-radius: 5px;
+  background: #cf3a3a;
+  box-shadow: 2px 2px 4px #b3b3b3, -2px -2px 4px #0e0d0d;
+}
+
+.styleButtonGreen {
+  text-decoration: none;
+  padding: 8px;
+  font-size: 1.4em;
+  color: white;
+  margin: 5px;
+  border-radius: 5px;
+  background: #559763;
+  box-shadow: 2px 2px 4px #b3b3b3, -2px -2px 4px #0e0d0d;
 }

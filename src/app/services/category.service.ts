@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class CategoryService {
+  [x: string]: any;
   constructor(private http: HttpClient) {}
 
   public getall(): Observable<Category[]> {
@@ -20,7 +21,7 @@ export class CategoryService {
   }
 
   public create(category: Category): Observable<Category> {
-    return this.http.post<Category>(environment.URL, category);
+    return this.http.post<Category>(`${environment.URL}/category`, category);
   }
 
   public delete(id: number): Observable<Category> {

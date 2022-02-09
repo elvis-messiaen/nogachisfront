@@ -1,4 +1,4 @@
 export interface Photo {
-    id?: number;
-    name?: string;
+  id?: number;
+  namephoto?: string;
 }
