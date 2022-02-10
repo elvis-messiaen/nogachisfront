@@ -23,6 +23,25 @@
     </div>
 
     <div class="mt-50 ml-30">
+      <label class="mr-20 mt-20 min">Recette ou conservation</label>
+      <form [formGroup]="form">
+        <select formControlName="nametype">
+          <option *ngFor="let ty of type" [ngValue]="ty">
+            {{ ty.nametype }}
+          </option>
+        </select>
+      </form>
+      <div
+        class="error"
+        *ngIf="form.get('nametype')?.errors && form.get('nametype')?.touched"
+      >
+        Le champs est requis
+      </div>
+    </div>
+
+
+
+    <div class="mt-50 ml-30" >
       <label class="mr-20 mt-20 min">Type de card</label>
       <form [formGroup]="form">
         <select formControlName="name">
@@ -44,20 +63,22 @@
       </div>
     </div>
 
-
-        <div class="mt-50 ml-30">
+    <div class="mt-50 ml-30">
       <label class="mr-20 min">Catégorie</label>
-      <input formControlName="namecategory" type="text" (change)="recuper($event)" />
+      <input
+        formControlName="namecategory"
+        type="text"
+        (change)="recuper($event)"
+      />
       <div
         class="error"
-        *ngIf="form.get('namecategory')?.errors && form.get('namecategory')?.touched"
+        *ngIf="
+          form.get('namecategory')?.errors && form.get('namecategory')?.touched
+        "
       >
         La taille de texte est de 50 caractére minimum !
       </div>
     </div>
-  
-
-
 
     <div class="mt-50 ml-30">
       <label class="mr-20 min">Description</label>
@@ -70,7 +91,7 @@
       </div>
     </div>
 
-    <div  class="mt-50 ml-30" formArrayName="namephoto">
+    <div class="mt-50 ml-30" formArrayName="namephoto">
       <label class="mr-20 wid" for="namephoto">photo</label>
       <input type="file" multiple (change)="selectFiles($event)" />
     </div>
@@ -87,5 +108,4 @@
       Valider
     </button>
   </form>
-
 </div>

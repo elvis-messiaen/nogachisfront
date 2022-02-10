@@ -1,43 +1,31 @@
 <div class="container">
   <div class="preservations-details-container">
-
     <div class="preservations-details-title">
-      <h3 id="title">Article conservation</h3>
-
+      <h3 id="title">{{ article.title }}</h3>
     </div>
 
     <div class="preservations-details-image">
       <div class="card-img-top mt-40">
-        <img src="../../../assets/img/conservation/bocaux.jpg" alt="Card image cap" />
+        <img
+          src="../../../assets/img/conservation/bocaux.jpg"
+          alt="Card image cap"
+        />
       </div>
     </div>
 
     <div class="card mt-50 mb-50">
-      <div class="card-body  adpateText">
-
-        <div class="article-card text-center ">
-          <h4 class="card-title ">Card title</h4>
+      <div class="card-body adpateText">
+        <div class="article-card text-center">
+          <h4 class="card-title">{{ article.typescard }}</h4>
         </div>
 
         <div class="contourCarddes">
           <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            doloribus dolore praesentium illo laudantium atque nobis voluptatum,
-            repellat modi id tempora ut dolorum eum nulla doloremque maiores
-            aliquid consequuntur saepe. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Nostrum doloribus dolore praesentium illo
-            laudantium atque nobis voluptatum, repellat modi id tempora ut
-            dolorum eum nulla doloremque maiores aliquid consequuntur saepe.
-            <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            doloribus dolore praesentium illo laudantium atque nobis voluptatum,
-            repellat modi id tempora ut dolorum eum nulla doloremque maiores
-            aliquid consequuntur saepe.
+              {{article.content}}
             <div>
-              <h4 id="date">24/01/1978</h4>
+              <h4 id="date">{{ article.date }}</h4>
             </div>
           </div>
-
         </div>
       </div>
     </div>

@@ -56,15 +56,11 @@
     </div>
   </div>
 
-  <div>
+
+  <div *ngFor="let article of articles | filter: search">
     <div class="col-sm-4">
-      <app-card></app-card>
-    </div>
-    <div class="col-sm-4">
-      <app-card></app-card>
-    </div>
-    <div class="col-sm-4">
-      <app-card></app-card>
+      <app-card [article]="article"></app-card>
     </div>
   </div>
+
 </div>

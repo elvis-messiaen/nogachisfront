@@ -20,7 +20,7 @@ export class ArticleService {
   }
 
   public getOne(id: number): Observable<Article> {
-    return this.http.get<Article>(`${this.articleUrl}/article${id}`);
+    return this.http.get<Article>(`${this.articleUrl}/article/${id}`);
   }
 
   public create(article: Article): Observable<Article> {
@@ -34,4 +34,5 @@ export class ArticleService {
   public update(article: Article): Observable<Article> {
     return this.http.put<Article>(this.articleUrl, article);
   }
+
 }

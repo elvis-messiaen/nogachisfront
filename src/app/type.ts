@@ -1,0 +1,4 @@
+export enum Type {
+  CONSERVATION = 'CONSERVATION',
+  RECETTE = 'RECETTE',
+}

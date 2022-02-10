@@ -9,4 +9,5 @@ export interface Article {
   typescard: Category
   namephoto: Photo;
   title: string;
+  nametype: string;
 }
