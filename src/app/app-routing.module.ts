@@ -20,11 +20,14 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'preservations/details', component: PreservationsDetailsComponent },
-  { path: 'preservations', component: PreservationsComponent },
+  {
+    path: 'preservations/details/:id',
+    component: PreservationsDetailsComponent,
+  },
+  { path: 'preservations', component: PreservationsComponent, },
   { path: 'recipe', component: RecipesComponent },
   { path: 'articlepost', component: FormulaireadminpostComponent },
-  { path: 'recipe/details', component: RecipeDetailsComponent },
+  { path: 'recipe/details/:id', component: RecipeDetailsComponent },
   { path: 'formupost', component: FormulaireadminpostComponent },
 
   {
@@ -44,4 +47,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

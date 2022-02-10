@@ -1,5 +1,7 @@
-<div class="container ">
-    <div class="col-sm-4 mb-200">
-      <app-card></app-card>
+<div class="container">
+  <div *ngFor="let article of articles">
+    <div class="col-sm-4 bas">
+      <app-card [article]="article"></app-card>
+    </div>
   </div>
 </div>

@@ -1,3 +1,5 @@
+import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
+import { Category } from './../../../models/category.model';
 import { HttpClient } from '@angular/common/http';
 import { ArticleService } from './../../../services/article.service';
 import { Article } from './../../../models/article.model';
@@ -11,6 +13,7 @@ import { Component, OnInit } from '@angular/core';
 export class PreservationsComponent implements OnInit {
   public articles: Article[] = [];
   public search = '';
+  public categories: Category[] = [];
 
   constructor(
     private articleService: ArticleService,
@@ -18,13 +21,12 @@ export class PreservationsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    
-          
     this.http
       .get<Article[]>('http://localhost:8080/article')
       .subscribe((data: Article[]) => {
-        this.articles = data;
+        this.articles = data.filter(
+          (article) => article.nametype === 'CONSERVATION'
+        );
       });
-  
-}
+  }
 }

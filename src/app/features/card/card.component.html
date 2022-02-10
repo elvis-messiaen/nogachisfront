@@ -1,17 +1,21 @@
-<div class="contourCard " *ngFor="let article of articles">
-  <div class="card mt-50 mb-50" >
+<div class="contourCard " *ngIf="article">
+  <div class="card mt-50 mb-100">
     <img
       class="card-img-top d-flex justify-content-center mg-50"
-      src={{article.namephoto}}
+      src="{{ article.namephoto }}"
       width="250px"
       alt="Card image cap"
     />
     <div class="card-body text-center adpateText">
-      <h5 class="card-title" >{{article.title}}</h5>
+      <h5 class="card-title">{{ article.title }}</h5>
       <p class="card-text">
-       {{article.content}}
+        {{ article.content }}
       </p>
-      <a href="#" class="btn btn-primary">En savoir +</a>
+      <a
+        [routerLink]="['/preservations/details', article.id]"
+        class="btn btn-primary"
+        >En savoir +</a
+      >
     </div>
   </div>
 </div>

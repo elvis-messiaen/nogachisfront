@@ -1,5 +1,5 @@
+
 import { CategoryService } from './../services/category.service';
-import { Category } from './../models/category.model';
 import { Photo } from './../models/photo.model';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
@@ -31,6 +31,7 @@ export class FormulaireadminpostComponent implements OnInit {
     { names: 'FUMAGE' },
     { names: 'CONFISAGE' },
   ];
+  type = [{ nametype: 'CONSERVATION' }, { nametype: 'RECETTE' }];
 
   public articles: Article[] = [];
   public photos: Photo[] = [];
@@ -48,13 +49,8 @@ export class FormulaireadminpostComponent implements OnInit {
     ]),
     namephoto: new FormControl(),
     namecategory: new FormControl('', [Validators.required]),
+    nametype: new FormControl('', [Validators.required]),
   });
-
-  /*
-  public formCategory: FormGroup = new FormGroup({
-    namecategory: new FormControl('', [Validators.required]),
-  });
-*/
 
   constructor(
     private articleService: ArticleService,
@@ -63,23 +59,14 @@ export class FormulaireadminpostComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
-/*
-  public submitCategory() {
-    this.categoryService.create(this.formCategory.value).subscribe();
-    this.formCategory.reset();
-    console.log(this.formCategory.value);
-    
-  }
-*/
+
   public namecat!: string;
   public recuper(e: any) {
     this.namecat = e.target.value;
-    console.log(this.namecat);    
   }
 
   public submit() {
     this.articleService.create(this.form.value).subscribe();
-   // this.categoryService.create(this.namecat).subscribe();
     this.selectFiles;
     this.form.reset();
   }
@@ -94,7 +81,6 @@ export class FormulaireadminpostComponent implements OnInit {
       .subscribe((res) => this.form.controls.namephoto.patchValue(res.url));
   }
 }
-
 
 
 export interface UploadResponse {
