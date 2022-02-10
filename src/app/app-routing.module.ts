@@ -30,6 +30,8 @@ const routes: Routes = [
   { path: 'recipe/details/:id', component: RecipeDetailsComponent },
   { path: 'formupost', component: FormulaireadminpostComponent },
 
+
+
   {
     path: 'admin',
     component: BoardAdminComponent,
