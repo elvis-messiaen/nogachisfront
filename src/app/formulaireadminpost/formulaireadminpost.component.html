@@ -26,9 +26,12 @@
       <label class="mr-20 mt-20 min">Recette ou conservation</label>
       <form [formGroup]="form">
         <select formControlName="nametype">
-          <option *ngFor="let ty of type" [ngValue]="ty">
+        <!--  <option *ngFor="let ty of type" [ngValue]="ty">
             {{ ty.nametype }}
           </option>
+        -->
+        <option value="CONSERVATION">CONSERVATION</option>
+        <option value="RECETTE">RECETTE</option>
         </select>
       </form>
       <div
@@ -76,7 +79,7 @@
           form.get('namecategory')?.errors && form.get('namecategory')?.touched
         "
       >
-        La taille de texte est de 50 caractére minimum !
+       Le champs est requis
       </div>
     </div>
 
@@ -96,7 +99,7 @@
       <input type="file" multiple (change)="selectFiles($event)" />
     </div>
 
-    <img
+    <img class="taille"
       *ngIf="form.controls.namephoto.value"
       [src]="form.controls.namephoto.value"
     />

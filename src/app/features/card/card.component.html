@@ -1,9 +1,10 @@
-<div class="contourCard " *ngIf="article">
+<div class="contourCard" *ngIf="article">
   <div class="card mt-50 mb-100">
     <img
-      class="card-img-top d-flex justify-content-center mg-50"
-      src="{{ article.namephoto }}"
-      width="250px"
+      class="card-img-top d-flex justify-content-center"
+      [src]="article.namephoto.namephoto" 
+      width="200px"
+      height="200px"
       alt="Card image cap"
     />
     <div class="card-body text-center adpateText">
