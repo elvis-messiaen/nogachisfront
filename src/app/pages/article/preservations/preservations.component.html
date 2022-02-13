@@ -7,20 +7,12 @@
       aria-label="Search"
       [(ngModel)]="search"
     />
-    <button class="ml-10 buttonEffet" type="button">Search</button>
     <button class="droite buttonEffet" type="button">Froid</button>
     <button class="buttonEffet" type="button">Chaud</button>
     <button class="buttonEffet" type="button">Autres</button>
   </div>
-  <!--
-  <div>
-    <ul *ngIf="search">
-      <li *ngFor="let article of articles | filter: search">
-        {{ article.title }}
-      </li>
-    </ul>
-  </div>
--->
+
+  <div *ngIf="search == ''">
   <div>
     <div class="contourCarddes mb-20">
       <h2 class="titre centerTexte">
@@ -55,12 +47,17 @@
       </div>
     </div>
   </div>
+  </div>
 
-  <div *ngFor="let article of articles | filter: search">
-    <div class="col-sm-4">
-      <app-card [article]="article"></app-card>
+
+  <div>
+    <div *ngFor="let article of articles | filter: search">
+      <div class="col-sm-4">
+        <app-card [article]="article"></app-card>
+      </div>
     </div>
   </div>
+
 
   <div>
     <div *ngIf="search">
@@ -71,4 +68,5 @@
       </div>
     </div>
   </div>
+
 </div>

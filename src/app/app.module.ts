@@ -28,7 +28,7 @@ import { RecipesComponent } from './pages/article/recipes/recipes.component';
 import { RecipeDetailsComponent } from './pages/article/recipes/recipe-details/recipe-details.component';
 import { FilterPipe } from './pages/article/preservations/filter.pipe';
 import { FormulaireadminpostComponent } from './formulaireadminpost/formulaireadminpost.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -52,7 +52,6 @@ import { FormulaireadminpostComponent } from './formulaireadminpost/formulairead
     RecipeDetailsComponent,
     FilterPipe,
     FormulaireadminpostComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -66,6 +65,7 @@ import { FormulaireadminpostComponent } from './formulaireadminpost/formulairead
     MatChipsModule,
     FormsModule,
     ReactiveFormsModule,
+    Ng2SearchPipeModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

@@ -14,7 +14,7 @@ export class PreservationsComponent implements OnInit {
   public articles: Article[] = [];
   public search = '';
   public categories: Category[] = [];
-
+  public rep: Boolean = true;
   constructor(
     private articleService: ArticleService,
     private http: HttpClient
