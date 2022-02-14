@@ -9,3 +9,10 @@
 .mb-100{
   margin-bottom: 100px;
 }
+
+.tailleCard {
+  min-height: 500px;
+  max-height: 750px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+}
