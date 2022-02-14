@@ -43,6 +43,7 @@ export class FormulaireadminpostComponent implements OnInit {
   public namephoto: string = '';
   public category!: Category;
   public article!: Article;
+
   public form: FormGroup = new FormGroup({
     name: new FormControl(this.froid[1], Validators.required),
     title: new FormControl('', [Validators.required, Validators.minLength(2)]),
@@ -52,7 +53,7 @@ export class FormulaireadminpostComponent implements OnInit {
       Validators.minLength(50),
     ]),
     namephoto: new FormControl(),
-    namecat: new FormControl('', [Validators.required]),
+    nametype: new FormControl('', [Validators.required]),
     namecategory: new FormControl('', [Validators.required]),
   });
 

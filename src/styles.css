@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
-@import "~@ng-select/ng-select/themes/default.theme.css";  
+@import "~@ng-select/ng-select/themes/default.theme.css";
 html,
 body {
   height: 100vh;
@@ -26,6 +26,9 @@ body {
 
 .mt-40 {
   margin-top: 40px;
+}
+.mt-100 {
+  margin-top: 100;
 }
 
 .mb-50 {
@@ -207,7 +210,6 @@ body {
 }
 
 .taillePhoto {
-
   padding-top: 2vw;
   padding: 2vw;
   width: 40vh;

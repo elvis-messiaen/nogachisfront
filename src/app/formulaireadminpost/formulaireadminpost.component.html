@@ -23,13 +23,9 @@
     </div>
 
     <div class="mt-50 ml-30">
-      <label class="mr-20 mt-20 min">Recette ou conservation</label>
+      <label class="mr-20  min">Recette ou conservation</label>
       <form [formGroup]="form">
         <select formControlName="nametype">
-        <!--  <option *ngFor="let ty of type" [ngValue]="ty">
-            {{ ty.nametype }}
-          </option>
-        -->
         <option value="CONSERVATION">CONSERVATION</option>
         <option value="RECETTE">RECETTE</option>
         </select>
@@ -84,8 +80,11 @@
     </div>
 
     <div class="mt-50 ml-30">
-      <label class="mr-20 min">Description</label>
-      <input formControlName="content" type="text" />
+      <label class="mr-20 ">Description</label>
+      <textarea   formControlName="content"
+          rows="5" cols="33">
+    </textarea>
+
       <div
         class="error"
         *ngIf="form.get('content')?.errors && form.get('content')?.touched"
