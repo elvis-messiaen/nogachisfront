@@ -1,4 +1,3 @@
-import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
 import { Category } from './../../../models/category.model';
 import { HttpClient } from '@angular/common/http';
 import { ArticleService } from './../../../services/article.service';
@@ -17,15 +16,16 @@ export class PreservationsComponent implements OnInit {
 
   constructor(
     private articleService: ArticleService,
-    private http: HttpClient
-  ) {}
+    private http: HttpClient,
+  ) {
+  }
 
   ngOnInit(): void {
     this.http
       .get<Article[]>('http://localhost:8080/article')
       .subscribe((data: Article[]) => {
         this.articles = data.filter(
-          (article) => article.nametype === 'CONSERVATION'
+          (article) => article.nametype === 'CONSERVATION',
         );
       });
   }

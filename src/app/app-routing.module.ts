@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'homepage', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'profile/:id', component: ProfileComponent },
   {
     path: 'preservations/details/:id',
     component: PreservationsDetailsComponent,
