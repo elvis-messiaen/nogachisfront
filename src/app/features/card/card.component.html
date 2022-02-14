@@ -1,13 +1,20 @@
-<div class="contourCard " *ngIf="article">
-  <div class="card mt-50 mb-100">
-    <img class="card-img-top d-flex justify-content-center mg-50" src="{{ article.namephoto }}" width="250px"
-      alt="Card image cap" />
-    <div class="card-body text-center adpateText">
-      <h5 class="card-title">{{ article.title }}</h5>
-      <p class="card-text">
-        {{ article.content }}
-      </p>
-      <a [routerLink]="['/preservations/details', article.id]" class="btn btn-primary">En savoir +</a>
+<div id="card-article" *ngIf="article" [routerLink]="['/preservations/details/', article.id]">
+  <div class="card-img">
+    <img [src]="article.namephoto.namephoto" alt="{{ article.title}}"/>
+  </div>
+
+  <div class="card-body">
+    <div class="card-title">
+      <h3>{{ article.title }}</h3>
+    </div>
+
+    <div class="card-content">
+      <p>{{ article.contentdescription }}</p>
+    </div>
+
+    <div class="card-info">
+      <span class="card-date">{{article.date}}</span>
+      <a [routerLink]="['/preservations/details/', article.id]" class="card-button">En savoir +</a>
     </div>
   </div>
 </div>

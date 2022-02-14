@@ -1,36 +1,36 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { Photo } from "../models/photo.model";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Photo } from '../models/photo.model';
+import { environment } from '../../environments/environment';
+
+const PHOTO_API = `${environment.URL}/photo/`;
 
 @Injectable({
   providedIn: 'root',
 })
 export class PhotoService {
-  private readonly photoUrl: string;
-
   constructor(private http: HttpClient) {
-    this.photoUrl = 'http://localhost:8080';
   }
 
   public getAll(): Observable<Photo[]> {
-    return this.http.get<Photo[]>(this.photoUrl);
+    return this.http.get<Photo[]>(PHOTO_API);
   }
 
   public getOne(id: number): Observable<Photo> {
-    return this.http.get<Photo>(`${this.photoUrl}/photo/${id}`);
+    return this.http.get<Photo>(PHOTO_API + id);
   }
 
   public create(photo: Photo): Observable<Photo> {
-    return this.http.post<Photo>(`${this.photoUrl}/photo`, photo);
+    return this.http.post<Photo>(PHOTO_API, photo);
   }
 
 
   public delete(id: number): Observable<Photo> {
-    return this.http.delete(`${this.photoUrl}/photo/${id}`);
+    return this.http.delete(PHOTO_API + id);
   }
 
   public update(photo: Photo): Observable<Photo> {
-    return this.http.put<Photo>(this.photoUrl, photo);
+    return this.http.put<Photo>(PHOTO_API, photo);
   }
 }

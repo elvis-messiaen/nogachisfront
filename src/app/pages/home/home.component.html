@@ -1,0 +1,10 @@
+<div id="home">
+  <div class="description">
+    <h2>Tous unis contre le gaspillage !</h2>
+    <p>Découvrez tout de suite 9 cartes aléatoires <mat-icon>arrow_downward</mat-icon></p>
+  </div>
+
+  <div class="articles">
+    <app-card *ngFor="let article of articles" [article]="article"></app-card>
+  </div>
+</div>

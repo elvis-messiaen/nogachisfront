@@ -4,11 +4,11 @@
   <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
 
     <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="form.email" required
-             #email="ngModel"/>
-      <div class="alert alert-danger" role="alert" *ngIf="email.errors && f.submitted">
-        L'adresse email est requise.
+      <label for="username">Nom d'utilisateur</label>
+      <input type="username" class="form-control" id="username" name="username" [(ngModel)]="form.username" required
+             #username="ngModel"/>
+      <div class="alert alert-danger" role="alert" *ngIf="username.errors && f.submitted">
+        Le nom d'utilisateur est requis.
       </div>
     </div>
 

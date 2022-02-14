@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './features/header/header.component';
 import { CardComponent } from './features/card/card.component';
 import { FooterComponent } from './features/footer/footer.component';
-import { HomepageComponent } from './pages/homepage/homepage.component';
+import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/account/login/login.component';
@@ -21,15 +21,18 @@ import { UpdateBlogComponent } from './pages/administration/article/update-blog/
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
-import { PreservationsDetailsComponent } from './pages/article/preservations/preservations-details/preservations-details.component';
+import {
+  PreservationsDetailsComponent,
+} from './pages/article/preservations/preservations-details/preservations-details.component';
 import { CategoryComponent } from './cat/category/category.component';
 import { PreservationsComponent } from './pages/article/preservations/preservations.component';
 import { RecipesComponent } from './pages/article/recipes/recipes.component';
 import { RecipeDetailsComponent } from './pages/article/recipes/recipe-details/recipe-details.component';
-import { FilterPipe } from './pages/article/preservations/filter.pipe';
 import { FormulaireadminpostComponent } from './formulaireadminpost/formulaireadminpost.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { FilterPipe } from './core/pipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HeaderComponent,
     CardComponent,
     FooterComponent,
-    HomepageComponent,
+    HomeComponent,
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
@@ -65,10 +68,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatChipsModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2SearchPipeModule
-    NgbModule,
+    Ng2SearchPipeModule,
+    MatIconModule,
+    MatButtonModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}

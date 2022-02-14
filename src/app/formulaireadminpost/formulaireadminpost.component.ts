@@ -1,10 +1,9 @@
-import { Typescard } from './../typescard';
-
-import { CategoryService } from './../services/category.service';
-import { Photo } from './../models/photo.model';
+import { Typescard } from '../typescard';
+import { CategoryService } from '../services/category.service';
+import { Photo } from '../models/photo.model';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Article } from '../models/article.model';
 import { ArticleService } from '../services/article.service';
 import { Category } from '../models/category.model';
@@ -12,7 +11,7 @@ import { Category } from '../models/category.model';
 @Component({
   selector: 'app-formulaireadminpost',
   templateUrl: './formulaireadminpost.component.html',
-  styleUrls: ['./formulaireadminpost.component.css'],
+  styleUrls: ['./formulaireadminpost.component.scss'],
 })
 export class FormulaireadminpostComponent implements OnInit {
   froid = [
@@ -72,17 +71,21 @@ export class FormulaireadminpostComponent implements OnInit {
   constructor(
     private articleService: ArticleService,
     private http: HttpClient,
-    private categoryService: CategoryService
-  ) {}
+    private categoryService: CategoryService,
+  ) {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   public recuper(e: any) {
     this.category.namecategory = e.target.value;
     this.category.namecategory_id = e.target.value;
     this.article.namecategory_id = e.target.value;
   }
+
   public idrecup!: Article;
+
   public submit() {
     this.form
       .get('modeconservation')
@@ -98,7 +101,7 @@ export class FormulaireadminpostComponent implements OnInit {
       formData.append('file', file);
     }
     this.http
-      .post<UploadResponse>('http://localhost:8080/file', formData)
+      .post<UploadResponse>('http://localhost:8080/api/file', formData)
       .subscribe((res) => this.form.controls.namephoto.patchValue(res.url));
   }
 }
@@ -106,6 +109,7 @@ export class FormulaireadminpostComponent implements OnInit {
 export interface UploadResponse {
   url: string;
 }
+
 function id(id: any, Number: NumberConstructor) {
   throw new Error('Function not implemented.');
 }

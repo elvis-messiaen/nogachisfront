@@ -1,33 +1,17 @@
-<div class="container">
-  <div class="preservations-details-container">
-    <div class="preservations-details-title">
-      <h3 id="title">{{ article.title }}</h3>
-    </div>
+<div id="preservations-details">
+  <div class="header">
+    <h3>{{ article.title }}</h3>
+    <img src="{{ article.namephoto.namephoto }}" alt="{{ article.title }}"/>
+  </div>
 
-    <div class="preservations-details-image">
-      <div class="card-img-top mt-40">
-        <img
-          src="{{ article.namephoto.namephoto }}"
-          alt="Card image cap"
-        />
-      </div>
-    </div>
+  <div class="body">
+    <span>{{ article.typescard }}</span>
+    <span>{{ article.modeconservation }}</span>
+    <p>{{article.content}}</p>
+    <p>{{article.contentdescription}}</p>
+  </div>
 
-    <div class="card mt-50 mb-50">
-      <div class="card-body adpateText">
-        <div class="article-card text-center">
-          <h4 class="card-title">{{ article.typescard }}</h4>
-        </div>
-
-        <div class="contourCarddes">
-          <div>
-              {{article.contentdescription}}
-            <div>
-              <h4 id="date">{{ article.date }}</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="footer">
+    <span>{{ article.date }}</span>
   </div>
 </div>
