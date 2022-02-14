@@ -14,7 +14,7 @@ export class PreservationsDetailsComponent implements OnInit {
   constructor(
     private articleService: ArticleService,
     private activatedRoute: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap
