@@ -20,9 +20,8 @@ export class PreservationsComponent implements OnInit {
 
   constructor(
     private articleService: ArticleService,
-    private http: HttpClient,
-  ) {
-  }
+    private http: HttpClient
+  ) { }
 
   ngOnInit(): void {
     this.http
