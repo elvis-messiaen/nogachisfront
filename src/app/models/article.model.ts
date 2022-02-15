@@ -8,7 +8,8 @@ export interface Article {
   content: string;
   date: Date;
   typescard: Category;
-  namephoto: Photo; 
+  namephoto: Photo;
   title: string;
   nametype: Typescard;
+  modeconservation: string
 }

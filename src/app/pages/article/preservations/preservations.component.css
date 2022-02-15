@@ -43,7 +43,7 @@
   line-height: 5vh;
 }
 .droite {
-  margin-left: 55%;
+  margin-left: 50%;
 }
 .buttonEffet{
   color: #0e0d0d;
@@ -51,4 +51,9 @@
   padding: 10px;
   border-radius: 5px;
   background: #e0e0e0;
+}
+.entete {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
 }

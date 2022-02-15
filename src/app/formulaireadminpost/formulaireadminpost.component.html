@@ -23,11 +23,11 @@
     </div>
 
     <div class="mt-50 ml-30">
-      <label class="mr-20  min">Recette ou conservation</label>
+      <label class="mr-20 min">Recette ou conservation</label>
       <form [formGroup]="form">
         <select formControlName="nametype">
-        <option value="CONSERVATION">CONSERVATION</option>
-        <option value="RECETTE">RECETTE</option>
+          <option value="CONSERVATION">CONSERVATION</option>
+          <option value="RECETTE">RECETTE</option>
         </select>
       </form>
       <div
@@ -37,13 +37,10 @@
         Le champs est requis
       </div>
     </div>
-
-
-
-    <div class="mt-50 ml-30" >
-      <label class="mr-20 mt-20 min">Type de card</label>
+    <div class="mt-50 ml-30">
+      <label class="mr-20 mt-20 min">Mode de conservation</label>
       <form [formGroup]="form">
-        <select formControlName="name">
+        <select formControlName="modeconservation">
           <option class="entete" value="froid" disabled>Froid</option>
           <option *ngFor="let fr of froid" [ngValue]="fr">
             {{ fr.names }}
@@ -56,7 +53,10 @@
       </form>
       <div
         class="error"
-        *ngIf="form.get('name')?.errors && form.get('name')?.touched"
+        *ngIf="
+          form.get('modeconservation')?.errors &&
+          form.get('modeconservation')?.touched
+        "
       >
         Le champs est requis
       </div>
@@ -75,15 +75,13 @@
           form.get('namecategory')?.errors && form.get('namecategory')?.touched
         "
       >
-       Le champs est requis
+        Le champs est requis
       </div>
     </div>
 
     <div class="mt-50 ml-30">
-      <label class="mr-20 ">Description</label>
-      <textarea   formControlName="content"
-          rows="5" cols="33">
-    </textarea>
+      <label class="mr-20">Description</label>
+      <textarea formControlName="content" rows="5" cols="33"> </textarea>
 
       <div
         class="error"
@@ -98,7 +96,8 @@
       <input type="file" multiple (change)="selectFiles($event)" />
     </div>
 
-    <img class="taille"
+    <img
+      class="taille"
       *ngIf="form.controls.namephoto.value"
       [src]="form.controls.namephoto.value"
     />

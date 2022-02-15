@@ -1,4 +1,3 @@
-import { Articleheritage } from './../models/article.model.heritage';
 import { Typescard } from './../typescard';
 
 import { CategoryService } from './../services/category.service';
@@ -17,7 +16,7 @@ import { Category } from '../models/category.model';
 })
 export class FormulaireadminpostComponent implements OnInit {
   froid = [
-    { names: 'REFRIGERATTION' },
+    { names: 'REFRIGERATION' },
     { names: 'SURGELATION' },
     { names: 'CONGELATION' },
   ];
@@ -55,13 +54,13 @@ export class FormulaireadminpostComponent implements OnInit {
     namephoto: new FormControl(),
     nametype: new FormControl('', [Validators.required]),
     namecategory: new FormControl('', [Validators.required]),
+    modeconservation: new FormControl('', [Validators.required]),
   });
 
   constructor(
     private articleService: ArticleService,
     private http: HttpClient,
     private categoryService: CategoryService,
-    private articleheritage: Articleheritage
   ) {}
 
   ngOnInit(): void {}
@@ -69,20 +68,16 @@ export class FormulaireadminpostComponent implements OnInit {
   public recuper(e: any) {
     this.category.namecategory = e.target.value;
     this.category.namecategory_id = e.target.value;
-    this.articleheritage._namecategory_id;
     this.article.namecategory_id = e.target.value;
 
-    this.articleService.update(this.articleheritage).subscribe();
-    console.log(
-      "recuperation de l'id dans pour la classe article" +
-        this.articleheritage._namecategory_id
-    );
 
-    //this.categoryService.create(e.target.value).subscribe();
-    //console.log(this.category.namecategory);
+
   }
   public idrecup!: Article;
   public submit() {
+    this.form
+      .get('modeconservation')
+      ?.setValue(this.form.get('modeconservation')?.value.names);
     this.articleService.create(this.form.value).subscribe();
     this.selectFiles;
     this.form.reset();

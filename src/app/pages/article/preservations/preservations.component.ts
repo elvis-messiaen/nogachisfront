@@ -13,8 +13,12 @@ import { Component, OnInit } from '@angular/core';
 export class PreservationsComponent implements OnInit {
   public articles: Article[] = [];
   public search = '';
+  public modeconservation = 'undefined';
   public categories: Category[] = [];
   public rep: Boolean = true;
+  public value: any;
+  public ret: Boolean = false;
+
   constructor(
     private articleService: ArticleService,
     private http: HttpClient
