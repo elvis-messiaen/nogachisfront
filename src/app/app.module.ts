@@ -29,8 +29,6 @@ import { RecipeDetailsComponent } from './pages/article/recipes/recipe-details/r
 import { FilterPipe } from './pages/article/preservations/filter.pipe';
 import { FormulaireadminpostComponent } from './formulaireadminpost/formulaireadminpost.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +50,6 @@ import { FormulaireadminpostComponent } from './formulaireadminpost/formulairead
     RecipeDetailsComponent,
     FilterPipe,
     FormulaireadminpostComponent,
-    
   ],
   imports: [
     BrowserModule,

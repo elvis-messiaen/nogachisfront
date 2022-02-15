@@ -7,67 +7,74 @@
       aria-label="Search"
       [(ngModel)]="search"
     />
-    <button class="ml-10 buttonEffet" type="button">Search</button>
-    <button class="droite buttonEffet" type="button">Froid</button>
-    <button class="buttonEffet" type="button">Chaud</button>
-    <button class="buttonEffet" type="button">Autres</button>
+
+    <button class="droite" type="button">
+      <select class="buttonEffet" [(ngModel)]="modeconservation">
+        <option class="entete" [value]="undefined">Froid</option>
+        <option value="REFRIGERATION">REFRIGERATION</option>
+        <option value="CONGELATION">CONGELATION</option>
+        <option value="SURGELATION">SURGELATION</option>
+      </select>
+    </button>
+
+    <button type="button">
+      <select class="buttonEffet" [(ngModel)]="modeconservation">
+        <option class="entete" [value]="undefined">Chaud</option>
+        <option value="STERILISATION">STERILISATION</option>
+        <option value="PASTEURISATION">PASTEURISATION</option>
+        <option value="APPERTISATION">APPERTISATION</option>
+        <option value="SEMICONSERVES">SEMICONSERVES</option>
+      </select>
+    </button>
   </div>
-  <!--
-  <div>
-    <ul *ngIf="search">
-      <li *ngFor="let article of articles | filter: search">
-        {{ article.title }}
-      </li>
-    </ul>
-  </div>
--->
-  <div>
-    <div class="contourCarddes mb-20">
-      <h2 class="titre centerTexte">
-        La conservation des aliments. Pourquoi ?
-      </h2>
-      Parmi les solutions anti-gaspillage alimentaire, la première se trouve
-      dans l’organisation des courses. Pour éviter de gaspiller, il y a quelques
-      tips simples à adopter que vous pourrez appliquer dès demain.
-      <br />
+
+  <div *ngIf="search == '' || ret">
+    <div>
+      <div class="contourCarddes mb-20">
+        <h2 class="titre centerTexte">
+          La conservation des aliments. Pourquoi ?
+        </h2>
+        Parmi les solutions anti-gaspillage alimentaire, la première se trouve
+        dans l’organisation des courses. Pour éviter de gaspiller, il y a
+        quelques tips simples à adopter que vous pourrez appliquer dès demain.
+        <br />
+      </div>
     </div>
-  </div>
-  <div class="column">
-    <div class="flex flex-direction: row row pb-50">
-      <div class="contourCard">
-        <div>
-          <img
-            class="taillePhoto"
-            src="../../../../assets/img/conservation/bocaux.jpg"
-            alt="Card image cap"
-          />
-          <img
-            class="taillePhoto"
-            src="../../../../assets/img/conservation/bocaux.jpg"
-            alt="Card image cap"
-          />
-          <img
-            class="taillePhoto"
-            src="../../../../assets/img/conservation/bocaux.jpg"
-            alt="Card image cap"
-          />
+    <div>
+      <div class="flex pb-50">
+        <div class="contourCard">
+          <div>
+            <img
+              class="taillePhoto"
+              src="../../../../assets/img/conservation/bocaux.jpg"
+              alt="Card image cap"
+            />
+            <img
+              class="taillePhoto"
+              src="../../../../assets/img/conservation/bocaux.jpg"
+              alt="Card image cap"
+            />
+            <img
+              class="taillePhoto"
+              src="../../../../assets/img/conservation/bocaux.jpg"
+              alt="Card image cap"
+            />
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div *ngFor="let article of articles | filter: search">
-    <div class="col-sm-4">
-      <app-card [article]="article"></app-card>
-    </div>
-  </div>
-
   <div>
-    <div *ngIf="search">
-      <div *ngFor="let article of articles | filter: search">
-        <div class="col-sm-4">
-          <app-card></app-card>
-        </div>
+    <div
+      *ngFor="
+        let article of articles
+          | filter
+            : { search: this.search, modeconservation: this.modeconservation }
+      "
+    >
+      <div class="col-sm-4">
+        <app-card [article]="article"></app-card>
       </div>
     </div>
   </div>

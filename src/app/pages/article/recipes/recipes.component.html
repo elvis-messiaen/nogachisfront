@@ -56,11 +56,14 @@
     </div>
   </div>
 
-
-  <div *ngFor="let article of articles | filter: search">
+  <div
+    *ngFor="
+      let article of articles
+        | filter: { search: this.search, modeconservation: undefined }
+    "
+  >
     <div class="col-sm-4">
       <app-card [article]="article"></app-card>
     </div>
   </div>
-
 </div>

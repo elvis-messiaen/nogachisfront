@@ -5,13 +5,21 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'filter',
 })
 export class FilterPipe implements PipeTransform {
-  transform(value: Article[], search: string): Article[] {
-    console.log(search);
+  transform(value: Article[], filters: filters): Article[] {
+    console.log(filters);
+
     return value.filter(
-      (v) => v.title?.includes(search.toLowerCase()));
+      (v) =>
+        (v.title?.includes(filters.search.toLowerCase()) ||
+          v.content?.includes(filters.search.toLowerCase())) &&
+        (filters.modeconservation == 'undefined' ||
+          filters.modeconservation === v.modeconservation)
+    );
   }
 }
-  
 
-
+interface filters {
+  search: string;
+  modeconservation?: string;
+}
 
