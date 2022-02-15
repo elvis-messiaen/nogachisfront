@@ -11,5 +11,6 @@ export interface Article {
   namephoto: Photo;
   title: string;
   nametype: Typescard;
-  modeconservation: string
+  modeconservation: string;
+  contentdescription: string;
 }

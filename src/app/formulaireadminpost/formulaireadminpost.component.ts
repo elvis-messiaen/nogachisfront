@@ -50,6 +50,11 @@ export class FormulaireadminpostComponent implements OnInit {
     content: new FormControl('', [
       Validators.required,
       Validators.minLength(50),
+      Validators.maxLength(200),
+    ]),
+    contentdescription: new FormControl('', [
+      Validators.required,
+      Validators.minLength(200),
     ]),
     namephoto: new FormControl(),
     nametype: new FormControl('', [Validators.required]),
@@ -60,7 +65,7 @@ export class FormulaireadminpostComponent implements OnInit {
   constructor(
     private articleService: ArticleService,
     private http: HttpClient,
-    private categoryService: CategoryService,
+    private categoryService: CategoryService
   ) {}
 
   ngOnInit(): void {}
@@ -69,9 +74,6 @@ export class FormulaireadminpostComponent implements OnInit {
     this.category.namecategory = e.target.value;
     this.category.namecategory_id = e.target.value;
     this.article.namecategory_id = e.target.value;
-
-
-
   }
   public idrecup!: Article;
   public submit() {

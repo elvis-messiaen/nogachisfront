@@ -80,14 +80,25 @@
     </div>
 
     <div class="mt-50 ml-30">
-      <label class="mr-20">Description</label>
+      <label class="mr-20">Description de la carte</label>
       <textarea formControlName="content" rows="5" cols="33"> </textarea>
 
       <div
         class="error"
         *ngIf="form.get('content')?.errors && form.get('content')?.touched"
       >
-        La taille de texte est de 50 caractére minimum !
+        Le texte doit être entre 50 caractéres et 200 caractéres!
+      </div>
+    </div>
+        <div class="mt-50 ml-30">
+      <label class="mr-20">Description de la fiche</label>
+      <textarea formControlName="contentdescription" rows="5" cols="33"> </textarea>
+
+      <div
+        class="error"
+        *ngIf="form.get('contentdescription')?.errors && form.get('contentdescription')?.touched"
+      >
+        Le texte doit être de 200 caractéres minimum !
       </div>
     </div>
 
