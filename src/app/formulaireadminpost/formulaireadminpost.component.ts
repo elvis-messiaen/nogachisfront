@@ -33,6 +33,13 @@ export class FormulaireadminpostComponent implements OnInit {
     { names: 'FUMAGE' },
     { names: 'CONFISAGE' },
   ];
+  menu = [
+    { names: 'PLAT' },
+    { names: 'ENTREE' },
+    { names: 'DESERT' },
+    { names: 'EPICES' },
+  ];
+
   public nametype!: Typescard;
 
   public articles: Article[] = [];

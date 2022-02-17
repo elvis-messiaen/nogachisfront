@@ -49,6 +49,10 @@
           <option *ngFor="let ch of chaud" [ngValue]="ch">
             {{ ch.names }}
           </option>
+          <option class="entete" value="Menu" disabled>Menu</option>
+          <option *ngFor="let me of menu" [ngValue]="me">
+            {{ me.names }}
+          </option>
         </select>
       </form>
       <div

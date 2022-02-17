@@ -28,6 +28,7 @@ import { RecipesComponent } from './pages/article/recipes/recipes.component';
 import { RecipeDetailsComponent } from './pages/article/recipes/recipe-details/recipe-details.component';
 import { FilterPipe } from './pages/article/preservations/filter.pipe';
 import { FormulaireadminpostComponent } from './formulaireadminpost/formulaireadminpost.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { FormulaireadminpostComponent } from './formulaireadminpost/formulairead
     MatChipsModule,
     FormsModule,
     ReactiveFormsModule,
+    NgbModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
