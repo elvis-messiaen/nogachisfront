@@ -1,12 +1,7 @@
 <div class="container mt-20 pb-100">
   <div class="search">
-    <input
-      class="mb-50 buttonEffet"
-      type="text"
-      placeholder="Rechercher"
-      aria-label="Search"
-      [(ngModel)]="search"
-    />
+    <input class="mb-50 buttonEffet" type="search" placeholder="Rechercher" aria-label="Search" [(ngModel)]="search" />
+    <button class="ml-10 buttonEffet" type="button">Search</button>
 
     <button class="droite" type="button">
       <select class="buttonEffet" [(ngModel)]="modeconservation">
@@ -19,43 +14,24 @@
     </button>
   </div>
 
-  <div *ngIf="search == '' || ret">
+  <div *ngIf="search ==''">
     <div>
-    <div class="contourCarddes mb-20">
-      <h2 class="titre centerTexte">Page de recettes</h2>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum doloribus
-      dolore praesentium illo laudantium atque nobis voluptatum, repellat modi
-      id tempora ut dolorum eum nulla doloremque maiores aliquid consequuntur
-      saepe. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-      doloribus dolore praesentium illo laudantium atque nobis voluptatum,
-      repellat modi id tempora ut dolorum eum nulla doloremque maiores aliquid
-      consequuntur saepe.
-      <br />
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum doloribus
-      dolore praesentium illo laudantium atque nobis voluptatum, repellat modi
-      id tempora ut dolorum eum nulla doloremque maiores aliquid consequuntur
-      saepe.
+      <div class="contourCarddes mb-20">
+        <h2 class="titre centerTexte">Page de recettes</h2>
+        Retrouver ici les nombreuses recettes mises à votre dispositon
+        Vous pouvez si vous le souhaitez rechercher par mot clé la recette
+        qui vous intéresse.
+        A vos papilles!
+
+      </div>
     </div>
-    </div>
-    <div>
-      <div class="flex pb-50">
+    <div class="column">
+      <div class="flex flex-direction: row row pb-50">
         <div class="contourCard">
           <div>
-            <img
-              class="taillePhoto"
-              src="../../../../assets/img/conservation/bocaux.jpg"
-              alt="Card image cap"
-            />
-            <img
-              class="taillePhoto"
-              src="../../../../assets/img/conservation/bocaux.jpg"
-              alt="Card image cap"
-            />
-            <img
-              class="taillePhoto"
-              src="../../../../assets/img/conservation/bocaux.jpg"
-              alt="Card image cap"
-            />
+            <img class="taillePhoto" src="../../../../assets/img/conservation/bocaux.jpg" alt="Card image cap" />
+            <img class="taillePhoto" src="../../../../assets/img/conservation/bocaux.jpg" alt="Card image cap" />
+            <img class="taillePhoto" src="../../../../assets/img/conservation/bocaux.jpg" alt="Card image cap" />
           </div>
         </div>
       </div>
