@@ -1,8 +1,6 @@
 <div id="profile" *ngIf="currentUser; else loggedOut">
-
-  <div class="profile-description">
+  <div class="description">
     <h2>Profil de {{ currentUser.email }}</h2>
-
     <p>
       <strong>Token:</strong>
       {{ currentUser.accessToken.substring(0, 20) }} ...
@@ -10,9 +8,8 @@
     </p>
   </div>
 
-  <div class="profile-modification">
+  <div class="modification">
     <h2>Modification du profil</h2>
-
 
     <form action="">
       <h3>Adresse email</h3>

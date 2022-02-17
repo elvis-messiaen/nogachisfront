@@ -1,74 +1,29 @@
-<nav class="navStyle navbar navbar-expand-lg">
-  <div class="container-fluid grand">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">NoGachis</a>
-    </div>
-    <ul class="mar nav navbar-nav">
-      <li>
-        <a class="buttonEffet butHover" routerLinkActive="active" routerLink="homepage">Home</a>
-      </li>
-
-      <li>
-        <a class="buttonEffet butHover" routerLinkActive="active" routerLink="products">products</a>
-      </li>
-      <li>
-        <a class="buttonEffet butHover" routerLinkActive="active" routerLink="recipe">recettes</a>
-      </li>
-      <li>
-        <a class="buttonEffet butHover" routerLinkActive="active" routerLink="preservations">conservations</a>
-      </li>
-      <li>
-        <a class="buttonEffet butHover" routerLinkActive="active" routerLink="propos">a propose de nous</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right rounded-pill">
-      <li>
-        <a class="enrButton" routerLink="register">
-          <span class="glyphicon glyphicon-user"></span>
-          S'inscrire</a>
-      </li>
-      <li>
-        <a class="conneButton text-center" routerLink="login">
-          <span class="glyphicon glyphicon-log-in"></span>
-          Se connecter
-        </a>
-      </li>
-    </ul>
+<header id="header">
+  <div class="title" routerLink="/">
+    <h1>NOGACHI</h1>
   </div>
-</nav>
 
-<!--<nav class="navbar navbar-expand navbar-dark bg-dark">-->
-<!--  <a href="#" class="navbar-brand">bezKoder</a>-->
-<!--  <ul class="navbar-nav mr-auto" routerLinkActive="active">-->
-<!--    <li class="nav-item">-->
-<!--      <a href="/home" class="nav-link" routerLink="home">Home </a>-->
-<!--    </li>-->
-<!--    <li class="nav-item" *ngIf="showAdminBoard">-->
-<!--      <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>-->
-<!--    </li>-->
-<!--    <li class="nav-item" *ngIf="showModeratorBoard">-->
-<!--      <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>-->
-<!--    </li>-->
-<!--    <li class="nav-item">-->
-<!--      <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>-->
-<!--    </li>-->
-<!--  </ul>-->
+  <div class="menu">
+    <a routerLinkActive="active" routerLink="home">Accueil</a>
+    <a routerLinkActive="active" routerLink="preservations">Conservations</a>
+    <a routerLinkActive="active" routerLink="products">Produits</a>
+    <a routerLinkActive="active" routerLink="recipe">Recettes</a>
+    <a routerLinkActive="active" routerLink="about">A propos</a>
 
-<!--  <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">-->
-<!--    <li class="nav-item">-->
-<!--      <a href="/register" class="nav-link" routerLink="register">Sign Up</a>-->
-<!--    </li>-->
-<!--    <li class="nav-item">-->
-<!--      <a href="/login" class="nav-link" routerLink="login">Login</a>-->
-<!--    </li>-->
-<!--  </ul>-->
+    <div class="dashboard" *ngIf="showAdminBoard">
+      <a href="/admin" class="nav-link" routerLinkActive="active" routerLink="admin">Admin Board</a>
+    </div>
+  </div>
 
-<!--  <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">-->
-<!--    <li class="nav-item">-->
-<!--      <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>-->
-<!--    </li>-->
-<!--    <li class="nav-item">-->
-<!--      <a href class="nav-link" (click)="logout()">LogOut</a>-->
-<!--    </li>-->
-<!--  </ul>-->
-<!--</nav>-->
+  <div class="account">
+    <div class="links logged" *ngIf="!isLoggedIn">
+      <a class="login" routerLinkActive="active" routerLink="login">Se connecter</a>
+      <a class="register" routerLinkActive="active" routerLink="register">S'inscrire</a>
+    </div>
+
+    <div class="links unlogged" *ngIf="isLoggedIn">
+      <a class="profile" routerLinkActive="active" routerLink="profile">{{ username }}</a>
+      <a class="logout" (click)="logout()">Se déconnecter</a>
+    </div>
+  </div>
+</header>

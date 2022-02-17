@@ -1,0 +1,91 @@
+#preservations {
+  .preservations-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .search {
+      width: 750px;
+
+      margin: 30px 0 0 0;
+      padding: 30px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      vertical-align: center;
+
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 1.0);
+      box-shadow: rgba(157, 157, 157, 0.25) 0 7px 29px 0;
+
+      .search-input {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+
+      .search-filters {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        label {
+          margin: 0 5px;
+        }
+      }
+    }
+
+    .infos {
+      margin: 30px 0 0 0;
+      padding: 30px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 1.0);
+      box-shadow: rgba(157, 157, 157, 0.25) 0 7px 29px 0;
+
+      .titles {
+        margin: 10px 0;
+        text-align: center;
+
+        h2 {
+          margin: 10px 0;
+          font-weight: 600;
+          font-size: 24px;
+          color: #79b4b7;
+        }
+
+        span {
+          font-weight: 400;
+          font-size: 18px;
+          color: rgba(21, 21, 21, 1.0);
+        }
+      }
+
+      .description {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+
+        p {
+          width: 80%;
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+
+  .articles {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

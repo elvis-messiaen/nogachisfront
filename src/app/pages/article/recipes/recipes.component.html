@@ -1,54 +1,32 @@
-<div class="container mt-20 pb-100">
-  <div class="search">
-    <input class="mb-50 buttonEffet" type="search" placeholder="Rechercher" aria-label="Search" [(ngModel)]="search" />
-    <button class="ml-10 buttonEffet" type="button">Search</button>
-
-    <button class="droite" type="button">
-      <select class="buttonEffet" [(ngModel)]="modeconservation">
-        <option class="entete" [value]="undefined">Menu</option>
-        <option value="PLAT">PLAT</option>
-        <option value="ENTREE">ENTREE</option>
-        <option value="DESERT">DESERT</option>
-        <option value="EPICES">EPICES</option>
-      </select>
-    </button>
-  </div>
-
-  <div *ngIf="search ==''">
-    <div>
-      <div class="contourCarddes mb-20">
-        <h2 class="titre centerTexte">Page de recettes</h2>
-        Retrouver ici les nombreuses recettes mises à votre dispositon
-        Vous pouvez si vous le souhaitez rechercher par mot clé la recette
-        qui vous intéresse.
-        A vos papilles!
-
+<div id="recipes">
+  <div class="recipes-header">
+    <div class="infos">
+      <div class="titles">
+        <h2>Page de recettes</h2>
+        <span>Pourquoi ?</span>
+      </div>
+      <div class="description">
+        <p>Retrouver ici les nombreuses recettes mises à votre dispositon. Vous pouvez si vous le souhaitez rechercher
+          par mot clé la recette qui vous intéresse. A vos papilles!</p>
       </div>
     </div>
-    <div class="column">
-      <div class="flex flex-direction: row row pb-50">
-        <div class="contourCard">
-          <div>
-            <img class="taillePhoto" src="../../../../assets/img/conservation/bocaux.jpg" alt="Card image cap" />
-            <img class="taillePhoto" src="../../../../assets/img/conservation/bocaux.jpg" alt="Card image cap" />
-            <img class="taillePhoto" src="../../../../assets/img/conservation/bocaux.jpg" alt="Card image cap" />
-          </div>
-        </div>
+    <div class="search">
+      <div class="search-input">
+        <mat-icon>search</mat-icon>
+        <input type="text" placeholder="Rechercher" [(ngModel)]="search"/>
+      </div>
+      <div class="search-filters">
+        <button type="button">Entrée</button>
+        <button type="button">Plat</button>
+        <button type="button">Desert</button>
+        <button type="button">Thèmes</button>
+        <button type="button">Épices</button>
       </div>
     </div>
   </div>
-
-  <div>
-    <div
-      *ngFor="
-        let article of articles
-          | filter
-            : { search: this.search, modeconservation: this.modeconservation }
-      "
-    >
-      <div class="col-sm-4">
-        <app-card [article]="article"></app-card>
-      </div>
-    </div>
+  <div class="articles">
+    <app-card
+      *ngFor="let article of articles | filter : { search: this.search, modeconservation: this.modeconservation }"
+      [article]="article"></app-card>
   </div>
 </div>

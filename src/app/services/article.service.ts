@@ -1,38 +1,36 @@
-
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Article } from "../models/article.model";
+import { Article } from '../models/article.model';
+import { environment } from '../../environments/environment';
 
+const ARTICLE_API = `${environment.URL}/article/`;
 
 @Injectable({
   providedIn: 'root',
 })
 export class ArticleService {
-  private readonly articleUrl: string;
-
   constructor(private http: HttpClient) {
-    this.articleUrl = 'http://localhost:8080';
   }
 
-  public getall(): Observable<Article[]> {
-    return this.http.get<Article[]>(`${this.articleUrl}/article`);
+  public getAll(): Observable<Article[]> {
+    return this.http.get<Article[]>(ARTICLE_API);
   }
 
   public getOne(id: number): Observable<Article> {
-    return this.http.get<Article>(`${this.articleUrl}/article/${id}`);
+    return this.http.get<Article>(ARTICLE_API + id);
   }
 
   public create(article: Article): Observable<Article> {
-    return this.http.post<Article>(`${this.articleUrl}/article`, article);
+    return this.http.post<Article>(ARTICLE_API, article);
   }
 
-  public delete(id: number | string): Observable<Article> {
-    return this.http.delete<Article>(`${this.articleUrl}/article/${id}`);
+  public delete(id: number): Observable<Article> {
+    return this.http.delete<Article>(ARTICLE_API + id);
   }
 
   public update(article: Article): Observable<Article> {
-    return this.http.put<Article>(this.articleUrl, article);
+    return this.http.put<Article>(ARTICLE_API, article);
   }
 
 }

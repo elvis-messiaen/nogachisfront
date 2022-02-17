@@ -1,0 +1,27 @@
+#home {
+  .description{
+    display: flex;
+    flex-direction: column;
+    vertical-align: center;
+    align-items: center;
+    justify-content: center;
+
+    margin: 10px 0;
+
+    h2{
+      font-weight: 700;
+      font-size: 44px;
+      margin: 20px 0;
+    }
+
+    p{
+      margin: 20px 0;
+    }
+  }
+  .articles {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
